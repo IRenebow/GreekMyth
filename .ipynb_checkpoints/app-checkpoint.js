@@ -1,4 +1,48 @@
 const graphEl = document.getElementById("graph");
+const legendEl = document.getElementById("legend");
+
+// Oil-painting style palette + relation styling
+const RELATION_STYLE = {
+  // Kinship / lineage (biological)
+  parent:    { color: "#7A5C3E", width: 3.0, dash: null,  label: "Parent → child" },
+  child:     { color: "#B08968", width: 2.2, dash: null,  label: "Child (inverse)" },
+  ancestor:  { color: "#4E3B2A", width: 2.6, dash: "2,6", label: "Ancestor (abstract)" },
+  sibling:   { color: "#6B7C5A", width: 2.0, dash: "3,4", label: "Siblings" },
+  twin:      { color: "#9AAA88", width: 2.4, dash: "1,3", label: "Twins" },
+
+  // Marriage & sexual
+  spouse:    { color: "#8E3B2F", width: 2.4, dash: "6,4", label: "Spouse (marriage)" },
+  consort:   { color: "#A0522D", width: 2.2, dash: "6,4", label: "Consort" },
+  lover:     { color: "#B56576", width: 2.0, dash: "2,4", label: "Lovers" },
+  affair:    { color: "#8F5D6E", width: 2.0, dash: "2,6", label: "Affair" },
+  rape:      { color: "#5B1F1F", width: 4.2, dash: "10,6", label: "Non-consensual union" },
+
+  // Creation / origin
+  created:   { color: "#2F5D8C", width: 2.6, dash: "1,0", label: "Created" },
+  born_from: { color: "#6C8EBF", width: 2.4, dash: "4,3", label: "Born from (mythic)" },
+  fashioned: { color: "#4A6070", width: 2.2, dash: "1,4", label: "Fashioned / crafted" },
+
+  // Conflict / power
+  overthrew: { color: "#7C2D12", width: 4.0, dash: null,  label: "Overthrew" },
+  killed:    { color: "#3A1F1F", width: 4.6, dash: null,  label: "Killed" },
+  punished:  { color: "#3F4A7A", width: 3.4, dash: "8,4", label: "Punished" },
+  enemy:     { color: "#6B6B6B", width: 2.6, dash: "3,3", label: "Enemies" },
+  ally:      { color: "#5F8D7A", width: 2.2, dash: "1,0", label: "Allies" },
+
+  // Favor / guidance
+  mentor:    { color: "#B08D57", width: 2.3, dash: "1,0", label: "Mentor" },
+  patron:    { color: "#C9A44C", width: 2.4, dash: "1,0", label: "Patron" },
+  blessed:   { color: "#E0C878", width: 2.2, dash: "1,0", label: "Blessed" },
+  cursed:    { color: "#5D4A66", width: 3.2, dash: "6,3", label: "Cursed" },
+
+  // Transformation / events
+  transformed:{ color: "#3E7A6D", width: 2.6, dash: "5,4", label: "Transformed" },
+  imprisoned:{ color: "#4A4A4A", width: 3.4, dash: "2,3", label: "Imprisoned" },
+  freed:     { color: "#A3C9A8", width: 2.4, dash: "2,4", label: "Freed" }
+};
+
+// Defines which relations count as "biological" for dash defaults (if missing)
+const BIOLOGICAL = new Set(["parent", "child"]);
 
 async function main() {
   const res = await fetch("data/relations.json");
@@ -26,11 +70,83 @@ function renderGraph(g) {
   const linkLayer = zoomLayer.append("g").attr("stroke", "#999").attr("stroke-opacity", 0.6);
   const nodeLayer = zoomLayer.append("g");
 
-  const links = linkLayer.selectAll("line")
-    .data(g.links)
-    .join("line")
-    .attr("stroke-width", 1.5)
-    .attr("stroke-dasharray", d => (d.relation === "spouse" || d.relation === "consort") ? "6,4" : null);
+function renderLegend(g) {
+  if (!legendEl) return;
+
+  // Only show relations that actually appear in your data
+  const present = Array.from(new Set(g.links.map(l => l.relation))).filter(Boolean);
+
+  // Grouping (optional but nice)
+  const groups = [
+    { title: "Lineage", keys: ["parent", "child", "ancestor", "sibling", "twin"] },
+    { title: "Romance & marriage", keys: ["spouse", "consort", "lover", "affair", "rape"] },
+    { title: "Creation & origin", keys: ["created", "born_from", "fashioned"] },
+    { title: "Conflict & power", keys: ["overthrew", "killed", "punished", "enemy", "ally"] },
+    { title: "Favor & guidance", keys: ["mentor", "patron", "blessed", "cursed"] },
+    { title: "Mythic events", keys: ["transformed", "imprisoned", "freed"] }
+  ];
+
+  // Flatten groups to only what's present; put unrecognized relations at the end
+  const ordered = [];
+  const used = new Set();
+
+  for (const grp of groups) {
+    const keys = grp.keys.filter(k => present.includes(k));
+    if (keys.length) {
+      ordered.push({ header: grp.title, keys });
+      keys.forEach(k => used.add(k));
+    }
+  }
+
+  const extras = present.filter(r => !used.has(r));
+  if (extras.length) ordered.push({ header: "Other", keys: extras });
+
+  // Build HTML
+  let html = `<div class="legend-title">Legend</div>`;
+  html += `<div class="legend-grid">`;
+
+  for (const section of ordered) {
+    for (const rel of section.keys) {
+      const s = styleForRelation(rel);
+      const dash = s.dash ? `border-top: ${s.width}px dashed ${s.color};` : `border-top: ${s.width}px solid ${s.color};`;
+
+      // We draw the "line" as a top border inside the swatch for dash accuracy
+      html += `
+        <div class="legend-item" title="${rel}">
+          <div class="legend-swatch" style="background:#fff;">
+            <div style="height:0; margin-top:5px; ${dash}"></div>
+          </div>
+          <div><b>${rel}</b>${s.label ? ` — ${s.label}` : ""}</div>
+        </div>
+      `;
+    }
+  }
+
+  html += `</div>`;
+  legendEl.innerHTML = html;
+}
+
+renderLegend(g);
+
+
+  function styleForRelation(rel) {
+      const s = RELATION_STYLE[rel];
+      if (s) return s;
+    
+      // fallback: biological = solid, otherwise dashed
+      if (BIOLOGICAL.has(rel)) return { color: "#7A5C3E", width: 2.6, dash: null, label: rel };
+      return { color: "#777", width: 2.0, dash: "4,4", label: rel };
+    }
+    
+    const links = linkLayer.selectAll("line")
+      .data(g.links)
+      .join("line")
+      .attr("stroke", d => styleForRelation(d.relation).color)
+      .attr("stroke-width", d => styleForRelation(d.relation).width)
+      .attr("stroke-dasharray", d => styleForRelation(d.relation).dash)
+      .attr("stroke-linecap", "round");
+
+    links.append("title").text(d => `${d.relation}: ${d.source.id ?? d.source} → ${d.target.id ?? d.target}`);
 
   const nodes = nodeLayer.selectAll("g")
     .data(g.nodes)
