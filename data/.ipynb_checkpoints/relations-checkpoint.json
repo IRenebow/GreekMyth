@@ -7,9 +7,9 @@
     { "id": "cronus", "label": "Cronus", "type": "titan", "generation": 2 },
     { "id": "rhea", "label": "Rhea", "type": "titan", "generation": 2 },
 
-    { "id": "zeus", "label": "Zeus", "type": "olympian", "generation": 3 },
+    { "id": "zeus", "label": "Zeus", "type": "olympian", "generation": 3, "img": "images/characters/zeus.jpg"},
     { "id": "hera", "label": "Hera", "type": "olympian", "generation": 3 },
-    { "id": "athena", "label": "Athena", "type": "olympian", "generation": 4 }
+    { "id": "athena", "label": "Athena", "type": "olympian", "generation": 4,"img": "images/characters/athena.jpg" }
   ],
   "links": [
     { "source": "gaia", "target": "uranus", "relation": "consort" },
