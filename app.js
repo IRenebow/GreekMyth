@@ -122,12 +122,13 @@ function renderGraph(g) {
 
     defs.append("marker")
       .attr("id", markerId(rel))
-      .attr("viewBox", "0 -5 10 10")
-      .attr("refX", 12)
+      .attr("viewBox", "0 -3 6 6")
+      .attr("refX", 7)          // closer to node edge
       .attr("refY", 0)
-      .attr("markerWidth", 7)
-      .attr("markerHeight", 7)
+      .attr("markerWidth", 4)   // MUCH smaller
+      .attr("markerHeight", 4)
       .attr("orient", "auto")
+      .attr("markerUnits", "strokeWidth") // 🔑 scale with line width
       .append("path")
       .attr("d", "M0,-5L10,0L0,5")
       .attr("fill", s.color)
