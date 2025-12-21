@@ -15,7 +15,7 @@
     "domains": ["Wisdom", "War", "Craft"],
     "parents": ["zeus"],
     "symbols": ["Owl", "Olive tree"],
-    "img": "images/characters/athena.jpg",
+    "img": "images/characters/athena.jpeg",
     "bio": "Athena sprang fully armed from Zeus's head...",
     "stories": ["odyssey", "arachne"]
   }
