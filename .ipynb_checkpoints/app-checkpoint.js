@@ -61,17 +61,6 @@ function styleForRelation(rel) {
   return { color: "#777", width: 2.4, dash: "4,4", label: rel };
 }
 
-function nodeRadius(d) {
-  const deg = degree?.get(d.id) || 0;
-
-  // Optional: small type boost (keeps primordials slightly bigger)
-  const typeBoost =
-    d.type === "primordial" ? 3 :
-    d.type === "titan" ? 1 : 0;
-
-  return radiusScale(deg + typeBoost);
-}
-
 function markerId(rel) {
   return `arrow-${rel}`;
 }
@@ -122,6 +111,17 @@ function renderGraph(g) {
     const radiusScale = d3.scaleSqrt()
       .domain(degExtent)
       .range([14, 38]); // <-- tweak these to make portraits bigger overall
+
+    function nodeRadius(d) {
+      const deg = degree?.get(d.id) || 0;
+    
+      // Optional: small type boost (keeps primordials slightly bigger)
+      const typeBoost =
+        d.type === "primordial" ? 3 :
+        d.type === "titan" ? 1 : 0;
+    
+      return radiusScale(deg + typeBoost);
+    }
 
 
   const svg = d3.select(graphEl)
