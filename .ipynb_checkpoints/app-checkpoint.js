@@ -99,6 +99,15 @@ function renderGraph(g) {
   const linkLayer = zoomLayer.append("g").attr("stroke-opacity", 0.6);
   const nodeLayer = zoomLayer.append("g");
 
+    const halo = linkLayer.selectAll("line.halo")
+      .data(g.links)
+      .join("line")
+      .attr("class", "halo")
+      .attr("stroke", "#F3EEE3") // warm parchment
+      .attr("stroke-width", d => styleForRelation(d.relation).width + 3)
+      .attr("stroke-linecap", "round")
+      .attr("stroke-opacity", 1);
+
 function renderLegend(g) {
   if (!legendEl) return;
 
