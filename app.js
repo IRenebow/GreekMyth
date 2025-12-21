@@ -3,42 +3,43 @@ const legendEl = document.getElementById("legend");
 
 // Oil-painting style palette + relation styling
 const RELATION_STYLE = {
-  // Kinship / lineage (biological)
-  parent:    { color: "#7A5C3E", width: 3.0, dash: null,  label: "Parent → child" },
-  child:     { color: "#B08968", width: 2.2, dash: null,  label: "Child (inverse)" },
-  ancestor:  { color: "#4E3B2A", width: 2.6, dash: "2,6", label: "Ancestor (abstract)" },
-  sibling:   { color: "#6B7C5A", width: 2.0, dash: "3,4", label: "Siblings" },
-  twin:      { color: "#9AAA88", width: 2.4, dash: "1,3", label: "Twins" },
+  // Lineage (warm earths)
+  parent:    { color: "#6B3F2A", width: 4.2, dash: null,   label: "Parent → child" },      // deep burnt umber
+  child:     { color: "#C08A4D", width: 2.8, dash: null,   label: "Child (inverse)" },     // ochre
+  ancestor:  { color: "#2F2117", width: 3.0, dash: "1,6",  label: "Ancestor (abstract)" }, // near-sepia, dotted
 
-  // Marriage & sexual
-  spouse:    { color: "#8E3B2F", width: 2.4, dash: "6,4", label: "Spouse (marriage)" },
-  consort:   { color: "#A0522D", width: 2.2, dash: "6,4", label: "Consort" },
-  lover:     { color: "#B56576", width: 2.0, dash: "2,4", label: "Lovers" },
-  affair:    { color: "#8F5D6E", width: 2.0, dash: "2,6", label: "Affair" },
-  rape:      { color: "#5B1F1F", width: 4.2, dash: "10,6", label: "Non-consensual union" },
+  sibling:   { color: "#2F6B4F", width: 2.6, dash: "6,3",  label: "Siblings" },            // viridian green
+  twin:      { color: "#6D8F74", width: 2.4, dash: "2,3",  label: "Twins" },               // pale viridian
 
-  // Creation / origin
-  created:   { color: "#2F5D8C", width: 2.6, dash: "1,0", label: "Created" },
-  born_from: { color: "#6C8EBF", width: 2.4, dash: "4,3", label: "Born from (mythic)" },
-  fashioned: { color: "#4A6070", width: 2.2, dash: "1,4", label: "Fashioned / crafted" },
+  // Marriage & sexual (reds / purples)
+  spouse:    { color: "#8B1E2D", width: 3.2, dash: "10,4", label: "Spouse (marriage)" },   // alizarin crimson
+  consort:   { color: "#B04A2F", width: 2.8, dash: "8,4",  label: "Consort" },             // burnt sienna
+  lover:     { color: "#B0476B", width: 2.6, dash: "3,4",  label: "Lovers" },              // rose/magenta
+  affair:    { color: "#6E3B5E", width: 2.6, dash: "2,6",  label: "Affair" },              // aubergine
+  rape:      { color: "#4A0F16", width: 5.2, dash: "14,6", label: "Non-consensual union" },// dried blood
 
-  // Conflict / power
-  overthrew: { color: "#7C2D12", width: 4.0, dash: null,  label: "Overthrew" },
-  killed:    { color: "#3A1F1F", width: 4.6, dash: null,  label: "Killed" },
-  punished:  { color: "#3F4A7A", width: 3.4, dash: "8,4", label: "Punished" },
-  enemy:     { color: "#6B6B6B", width: 2.6, dash: "3,3", label: "Enemies" },
-  ally:      { color: "#5F8D7A", width: 2.2, dash: "1,0", label: "Allies" },
+  // Creation & origin (blues)
+  created:   { color: "#1F4E79", width: 3.0, dash: null,   label: "Created" },             // ultramarine-ish
+  born_from: { color: "#4E7FA6", width: 2.8, dash: "4,3",  label: "Born from (mythic)" },  // cerulean
+  fashioned: { color: "#2F3E4E", width: 2.8, dash: "1,4",  label: "Fashioned / crafted" }, // slate blue-gray
 
-  // Favor / guidance
-  mentor:    { color: "#B08D57", width: 2.3, dash: "1,0", label: "Mentor" },
-  patron:    { color: "#C9A44C", width: 2.4, dash: "1,0", label: "Patron" },
-  blessed:   { color: "#E0C878", width: 2.2, dash: "1,0", label: "Blessed" },
-  cursed:    { color: "#5D4A66", width: 3.2, dash: "6,3", label: "Cursed" },
+  // Conflict & power (darks / steel)
+  overthrew: { color: "#7A2E1A", width: 4.8, dash: null,   label: "Overthrew" },           // iron oxide red
+  killed:    { color: "#1E1414", width: 6.0, dash: null,   label: "Killed" },              // near-black umber
+  punished:  { color: "#2B2E6B", width: 4.0, dash: "10,5", label: "Punished" },            // deep indigo
+  enemy:     { color: "#5A5A5A", width: 3.2, dash: "3,3",  label: "Enemies" },             // ash gray
+  ally:      { color: "#3C7F77", width: 2.8, dash: null,   label: "Allies" },              // verdigris
 
-  // Transformation / events
-  transformed:{ color: "#3E7A6D", width: 2.6, dash: "5,4", label: "Transformed" },
-  imprisoned:{ color: "#4A4A4A", width: 3.4, dash: "2,3", label: "Imprisoned" },
-  freed:     { color: "#A3C9A8", width: 2.4, dash: "2,4", label: "Freed" }
+  // Favor & guidance (golden pigments)
+  mentor:    { color: "#9C7A2F", width: 2.8, dash: null,   label: "Mentor" },              // aged gold
+  patron:    { color: "#C2A13B", width: 3.0, dash: null,   label: "Patron" },              // antique gold
+  blessed:   { color: "#E0C36A", width: 2.8, dash: "2,3",  label: "Blessed" },             // pale gold
+  cursed:    { color: "#3F2C4D", width: 4.2, dash: "6,3",  label: "Cursed" },              // bruised violet
+
+  // Mythic events
+  transformed:{ color: "#1F6A5B", width: 3.2, dash: "7,4", label: "Transformed" },         // deep teal/viridian
+  imprisoned:{ color: "#3C3F45", width: 4.6, dash: "2,3",  label: "Imprisoned" },          // payne's gray
+  freed:     { color: "#88BDA2", width: 3.0, dash: "2,6",  label: "Freed" }                // celadon
 };
 
 // Defines which relations count as "biological" for dash defaults (if missing)
@@ -60,6 +61,34 @@ function renderGraph(g) {
     .append("svg")
     .attr("width", width)
     .attr("height", height);
+
+    // --- Arrowhead definitions (one per relation type) ---
+    const defs = svg.append("defs");
+    
+    function markerId(rel) {
+      return `arrow-${rel}`;
+    }
+    
+    // Create markers only for relations that appear
+    const rels = Array.from(new Set(g.links.map(l => l.relation))).filter(Boolean);
+    
+    rels.forEach(rel => {
+      const s = styleForRelation(rel);
+    
+      defs.append("marker")
+        .attr("id", markerId(rel))
+        .attr("viewBox", "0 -5 10 10")
+        .attr("refX", 12)          // position of arrow relative to end of line
+        .attr("refY", 0)
+        .attr("markerWidth", 7)
+        .attr("markerHeight", 7)
+        .attr("orient", "auto")
+        .append("path")
+        .attr("d", "M0,-5L10,0L0,5")
+        .attr("fill", s.color)
+        .attr("opacity", 0.95);
+    });
+
 
   const zoomLayer = svg.append("g");
   const zoom = d3.zoom().on("zoom", (event) => {
@@ -137,6 +166,7 @@ renderLegend(g);
       if (BIOLOGICAL.has(rel)) return { color: "#7A5C3E", width: 2.6, dash: null, label: rel };
       return { color: "#777", width: 2.0, dash: "4,4", label: rel };
     }
+    const DIRECTED = new Set(["parent","created","fashioned","killed","punished","cursed","blessed","mentor","patron","overthrew"]);
     
     const links = linkLayer.selectAll("line")
       .data(g.links)
@@ -144,7 +174,8 @@ renderLegend(g);
       .attr("stroke", d => styleForRelation(d.relation).color)
       .attr("stroke-width", d => styleForRelation(d.relation).width)
       .attr("stroke-dasharray", d => styleForRelation(d.relation).dash)
-      .attr("stroke-linecap", "round");
+      .attr("stroke-linecap", "round")
+      .attr("marker-end", d => DIRECTED.has(d.relation) ? `url(#${markerId(d.relation)})` : null);
 
     links.append("title").text(d => `${d.relation}: ${d.source.id ?? d.source} → ${d.target.id ?? d.target}`);
 
@@ -174,15 +205,45 @@ renderLegend(g);
     .force("y", d3.forceY(d => (d.generation ?? 0) * 120).strength(0.2))
     .force("collide", d3.forceCollide().radius(d => r(d) + 18));
 
-  sim.on("tick", () => {
-    links
-      .attr("x1", d => d.source.x)
-      .attr("y1", d => d.source.y)
-      .attr("x2", d => d.target.x)
-      .attr("y2", d => d.target.y);
+    function nodeRadius(d) {
+      return d.type === "primordial" ? 14 : d.type === "titan" ? 12 : 10;
+    }
+    
+    // Move the end of the line back from the target node by its radius (plus a little padding)
+    function shortenLinkToTarget(d) {
+      const sx = d.source.x, sy = d.source.y;
+      const tx = d.target.x, ty = d.target.y;
+    
+      const dx = tx - sx;
+      const dy = ty - sy;
+      const dist = Math.sqrt(dx*dx + dy*dy) || 1;
+    
+      const pad = nodeRadius(d.target) + 6; // 6px extra for arrowhead
+      const ratio = (dist - pad) / dist;
+    
+      return {
+        x2: sx + dx * ratio,
+        y2: sy + dy * ratio
+      };
+    }
 
-    nodes.attr("transform", d => `translate(${d.x},${d.y})`);
-  });
+
+    sim.on("tick", () => {
+  halo
+    .attr("x1", d => d.source.x)
+    .attr("y1", d => d.source.y)
+    .attr("x2", d => shortenLinkToTarget(d).x2)
+    .attr("y2", d => shortenLinkToTarget(d).y2);
+
+  links
+    .attr("x1", d => d.source.x)
+    .attr("y1", d => d.source.y)
+    .attr("x2", d => shortenLinkToTarget(d).x2)
+    .attr("y2", d => shortenLinkToTarget(d).y2);
+
+  nodes.attr("transform", d => `translate(${d.x},${d.y})`);
+});
+
 
     // After a short moment, zoom-to-fit the whole graph
     setTimeout(() => {

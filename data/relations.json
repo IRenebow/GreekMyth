@@ -9,7 +9,7 @@
 
     { "id": "zeus", "label": "Zeus", "type": "olympian", "generation": 3 },
     { "id": "hera", "label": "Hera", "type": "olympian", "generation": 3 },
-    { "id": "athena", "label": "Athena", "type": "olympian", "generation": 3 }
+    { "id": "athena", "label": "Athena", "type": "olympian", "generation": 4 }
   ],
   "links": [
     { "source": "gaia", "target": "uranus", "relation": "consort" },

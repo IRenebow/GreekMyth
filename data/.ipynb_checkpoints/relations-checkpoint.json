@@ -1,15 +1,15 @@
 {
   "nodes": [
-    { "id": "chaos", "label": "Chaos", "type": "primordial" },
-    { "id": "gaia", "label": "Gaia", "type": "primordial" },
-    { "id": "uranus", "label": "Uranus", "type": "primordial" },
+    { "id": "chaos", "label": "Chaos", "type": "primordial", "generation": 1 },
+    { "id": "gaia", "label": "Gaia", "type": "primordial", "generation": 1 },
+    { "id": "uranus", "label": "Uranus", "type": "primordial", "generation": 1 },
 
-    { "id": "cronus", "label": "Cronus", "type": "titan" },
-    { "id": "rhea", "label": "Rhea", "type": "titan" },
+    { "id": "cronus", "label": "Cronus", "type": "titan", "generation": 2 },
+    { "id": "rhea", "label": "Rhea", "type": "titan", "generation": 2 },
 
-    { "id": "zeus", "label": "Zeus", "type": "olympian" },
-    { "id": "hera", "label": "Hera", "type": "olympian" },
-    { "id": "athena", "label": "Athena", "type": "olympian" }
+    { "id": "zeus", "label": "Zeus", "type": "olympian", "generation": 3 },
+    { "id": "hera", "label": "Hera", "type": "olympian", "generation": 3 },
+    { "id": "athena", "label": "Athena", "type": "olympian", "generation": 4 }
   ],
   "links": [
     { "source": "gaia", "target": "uranus", "relation": "consort" },
