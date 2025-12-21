@@ -115,6 +115,25 @@ function renderGraph(g) {
 
   // Arrow marker defs (one per relation present)
   const defs = svg.append("defs");
+  // --- Image patterns for character portraits ---
+    g.nodes.forEach(d => {
+      if (!d.img) return;
+    
+      const size = nodeRadius(d) * 2;
+    
+      const pat = defs.append("pattern")
+        .attr("id", `img-${d.id}`)
+        .attr("patternUnits", "objectBoundingBox")
+        .attr("width", 1)
+        .attr("height", 1);
+    
+      pat.append("image")
+        .attr("href", d.img)
+        .attr("width", size)
+        .attr("height", size)
+        .attr("preserveAspectRatio", "xMidYMid slice");
+    });
+
   const rels = Array.from(new Set(g.links.map(l => l.relation))).filter(Boolean);
 
   rels.forEach(rel => {
@@ -172,10 +191,17 @@ function renderGraph(g) {
     .style("cursor", "grab");
 
   nodes.append("circle")
-    .attr("r", d => nodeRadius(d))
-    .attr("fill", "#fff")
+      .attr("r", d => nodeRadius(d))
+      .attr("fill", d => d.img ? `url(#img-${d.id})` : "#fff")
     .attr("stroke", "#333")
     .attr("stroke-width", 1.5);
+
+  nodes.append("circle")
+      .attr("r", d => nodeRadius(d))
+      .attr("fill", "none")
+      .attr("stroke", "rgba(0,0,0,0.15)")
+      .attr("stroke-width", 1);
+
 
   nodes.append("text")
     .text(d => d.label)
