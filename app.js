@@ -164,7 +164,7 @@ function renderGraph(g) {
     .join("line")
     .attr("class", "halo")
     .attr("stroke", "#F3EEE3") // warm parchment halo
-    .attr("stroke-width", d => styleForRelation(d.relation).width + 3)
+    .attr("stroke-width", d => styleForRelation(d.relation).width + 8)
     .attr("stroke-linecap", "round")
     .attr("stroke-opacity", 1);
 
