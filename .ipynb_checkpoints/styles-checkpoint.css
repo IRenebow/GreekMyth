@@ -22,4 +22,11 @@ body { margin: 0; background: #fafafa; color: #111; }
   .grid { grid-template-columns: 1fr; }
 }
 
-#graph { border: 1px solid #eee; border-radius: 14px; background: #fff; overflow: hidden; }
+#graph {
+  height: 75vh;          /* big canvas */
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;      /* keep this */
+}

@@ -18,11 +18,10 @@ function renderGraph(g) {
     .attr("height", height);
 
   const zoomLayer = svg.append("g");
-  svg.call(
-    d3.zoom().on("zoom", (event) => {
+  const zoom = d3.zoom().on("zoom", (event) => {
       zoomLayer.attr("transform", event.transform);
-    })
-  );
+    });
+    svg.call(zoom);
 
   const linkLayer = zoomLayer.append("g").attr("stroke", "#999").attr("stroke-opacity", 0.6);
   const nodeLayer = zoomLayer.append("g");
@@ -66,6 +65,32 @@ function renderGraph(g) {
       .attr("x2", d => d.target.x)
       .attr("y2", d => d.target.y);
 
+    // After a short moment, zoom-to-fit the whole graph
+    setTimeout(() => {
+      // bounding box of everything inside zoomLayer
+      const bounds = zoomLayer.node().getBBox();
+      const fullWidth = width;
+      const fullHeight = height;
+    
+      const padding = 40;
+      const boundsWidth = bounds.width + padding * 2;
+      const boundsHeight = bounds.height + padding * 2;
+    
+      // Avoid divide-by-zero
+      if (boundsWidth === 0 || boundsHeight === 0) return;
+    
+      const scale = Math.min(fullWidth / boundsWidth, fullHeight / boundsHeight);
+    
+      const translateX = fullWidth / 2 - scale * (bounds.x + bounds.width / 2);
+      const translateY = fullHeight / 2 - scale * (bounds.y + bounds.height / 2);
+    
+      svg.transition().duration(500).call(
+        zoom.transform,
+        d3.zoomIdentity.translate(translateX, translateY).scale(scale)
+      );
+    }, 500);
+
+
     nodes.attr("transform", d => `translate(${d.x},${d.y})`);
   });
 
@@ -85,6 +110,11 @@ function renderGraph(g) {
         d.fx = null; d.fy = null;
       })
   );
+
+    window.addEventListener("resize", () => {
+      renderGraph(g);
+    }, { once: true });
+
 }
 
 main();
