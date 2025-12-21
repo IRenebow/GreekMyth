@@ -13,23 +13,14 @@
     <input id="search" placeholder="Search characters or stories…" />
   </header>
 
-  <main class="grid">
-    <section class="panel">
-      <h2>Characters</h2>
-      <div id="characters" class="list"></div>
-    </section>
+  <main class="panel" style="max-width:1100px;margin:0 auto 24px;padding:14px;">
+  <h2>Family Tree</h2>
+  <p class="sub">Drag to move. Scroll to zoom. Click a character to open details.</p>
+  <div id="graph" style="height:70vh;"></div>
+</main>
 
-    <section class="panel">
-      <h2>Stories</h2>
-      <div id="stories" class="list"></div>
-    </section>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="app.js"></script>
 
-    <section class="panel detail">
-      <h2>Details</h2>
-      <div id="detail" class="card empty">Click a character or story.</div>
-    </section>
-  </main>
-
-  <script src="app.js"></script>
 </body>
 </html>
