@@ -76,3 +76,20 @@ body { margin: 0; background: #fafafa; color: #111; }
   background: linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(0,0,0,0.08));
   pointer-events: none;
 }
+
+.profile-header{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  margin: 12px 0 18px;
+}
+
+.portrait{
+  width:140px;
+  height:140px;
+  border-radius: 18px;
+  object-fit: cover;
+  border: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  background: #f4f0e7; /* parchment fallback */
+}

@@ -24,6 +24,17 @@ async function main() {
     document.getElementById("name").textContent = `Unknown character: ${id}`;
     return;
   }
+  const portrait = document.getElementById("portrait");
+
+    if (c.img) {
+      portrait.src = c.img;
+      portrait.alt = c.name ? `${c.name} portrait` : "Character portrait";
+      portrait.style.display = "";
+    } else {
+      // hide the <img> if no picture provided
+      portrait.style.display = "none";
+    }
+
 
   document.title = c.name;
   document.getElementById("name").textContent = c.name;
