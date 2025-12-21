@@ -183,6 +183,12 @@ function renderGraph(g) {
     .attr("y", 4)
     .attr("font-size", 12);
 
+  nodes.on("click", (event, d) => {
+      // prevent click from triggering drag behavior weirdness
+      event.stopPropagation();
+      window.location.href = `character.html?id=${encodeURIComponent(d.id)}`;
+    });
+
   // Shorten lines so arrows don't overlap target nodes
   function shortenToTarget(d) {
     const sx = d.source.x, sy = d.source.y;

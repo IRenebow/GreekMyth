@@ -1,0 +1,20 @@
+{
+  "zeus": {
+    "name": "Zeus",
+    "title": "King of the Olympians",
+    "domains": ["Sky", "Thunder", "Law"],
+    "parents": ["cronus", "rhea"],
+    "symbols": ["Thunderbolt", "Eagle"],
+    "bio": "Zeus overthrew Cronus and became ruler of the Olympians...",
+    "stories": ["the-titanomachy", "birth-of-athena"]
+  },
+  "athena": {
+    "name": "Athena",
+    "title": "Goddess of Wisdom",
+    "domains": ["Wisdom", "War", "Craft"],
+    "parents": ["zeus"],
+    "symbols": ["Owl", "Olive tree"],
+    "bio": "Athena sprang fully armed from Zeus's head...",
+    "stories": ["odyssey", "arachne"]
+  }
+}
