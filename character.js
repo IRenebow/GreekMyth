@@ -52,11 +52,14 @@ async function main() {
   const stories = document.getElementById("stories");
   stories.innerHTML = "";
   (c.stories ?? []).forEach(st => {
-    const item = document.createElement("li");
-    // if you have story pages, link them here
-    item.textContent = st;
-    stories.appendChild(item);
-  });
+      const item = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = `story.html?id=${encodeURIComponent(st)}`;
+      a.textContent = st;
+      item.appendChild(a);
+      stories.appendChild(item);
+    });
+
 }
 
 main();
