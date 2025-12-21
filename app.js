@@ -67,7 +67,7 @@ function renderGraph(g) {
     });
     svg.call(zoom);
 
-  const linkLayer = zoomLayer.append("g").attr("stroke", "#999").attr("stroke-opacity", 0.6);
+  const linkLayer = zoomLayer.append("g").attr("stroke-opacity", 0.6);
   const nodeLayer = zoomLayer.append("g");
 
 function renderLegend(g) {
@@ -181,6 +181,9 @@ renderLegend(g);
       .attr("x2", d => d.target.x)
       .attr("y2", d => d.target.y);
 
+    nodes.attr("transform", d => `translate(${d.x},${d.y})`);
+  });
+
     // After a short moment, zoom-to-fit the whole graph
     setTimeout(() => {
       // bounding box of everything inside zoomLayer
@@ -204,11 +207,7 @@ renderLegend(g);
         zoom.transform,
         d3.zoomIdentity.translate(translateX, translateY).scale(scale)
       );
-    }, 500);
-
-
-    nodes.attr("transform", d => `translate(${d.x},${d.y})`);
-  });
+    }, 600);
 
   nodes.call(
     d3.drag()
