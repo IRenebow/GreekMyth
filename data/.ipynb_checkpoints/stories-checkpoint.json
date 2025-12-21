@@ -1,0 +1,21 @@
+{
+  "the-titanomachy": {
+    "title": "The Titanomachy",
+    "summary": "A ten-year war in which Zeus and the Olympians overthrew the Titans.",
+    "characters": ["zeus", "cronus", "rhea", "gaia", "uranus"],
+    "events": [
+      "Zeus frees his siblings from Cronus.",
+      "The Olympians and Titans wage war.",
+      "The Olympians win; Titans are imprisoned."
+    ]
+  },
+  "birth-of-athena": {
+    "title": "The Birth of Athena",
+    "summary": "Athena is born from Zeus in an extraordinary way.",
+    "characters": ["zeus", "athena"],
+    "events": [
+      "Zeus experiences severe pain.",
+      "Athena emerges fully armed."
+    ]
+  }
+}
