@@ -1,0 +1,27 @@
+{
+  "nodes": [
+    { "id": "chaos", "label": "Chaos", "type": "primordial" },
+    { "id": "gaia", "label": "Gaia", "type": "primordial" },
+    { "id": "uranus", "label": "Uranus", "type": "primordial" },
+
+    { "id": "cronus", "label": "Cronus", "type": "titan" },
+    { "id": "rhea", "label": "Rhea", "type": "titan" },
+
+    { "id": "zeus", "label": "Zeus", "type": "olympian" },
+    { "id": "hera", "label": "Hera", "type": "olympian" },
+    { "id": "athena", "label": "Athena", "type": "olympian" }
+  ],
+  "links": [
+    { "source": "gaia", "target": "uranus", "relation": "consort" },
+
+    { "source": "uranus", "target": "cronus", "relation": "parent" },
+    { "source": "gaia", "target": "cronus", "relation": "parent" },
+
+    { "source": "cronus", "target": "zeus", "relation": "parent" },
+    { "source": "rhea", "target": "zeus", "relation": "parent" },
+
+    { "source": "zeus", "target": "hera", "relation": "spouse" },
+
+    { "source": "zeus", "target": "athena", "relation": "parent" }
+  ]
+}
