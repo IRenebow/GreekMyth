@@ -1,0 +1,25 @@
+{
+  "characters": [
+    {
+      "id": "zeus",
+      "name": "Zeus",
+      "role": "King of the Olympians",
+      "domain": ["sky", "thunder"],
+      "description": "Ruler of Mount Olympus and god of the sky and thunder."
+    },
+    {
+      "id": "athena",
+      "name": "Athena",
+      "role": "Goddess of wisdom",
+      "domain": ["wisdom", "strategy", "craft"],
+      "description": "Associated with wisdom, strategy, and civic life."
+    }
+  ],
+  "stories": [
+    {
+      "id": "athena_birth",
+      "title": "The Birth of Athena",
+      "summary": "Athena springs fully armed from Zeus’s head, symbolizing wisdom and strategy."
+    }
+  ]
+}
