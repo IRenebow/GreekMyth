@@ -62,7 +62,14 @@ function styleForRelation(rel) {
 }
 
 function nodeRadius(d) {
-  return d.type === "primordial" ? 14 : d.type === "titan" ? 12 : 10;
+  const deg = degree?.get(d.id) || 0;
+
+  // Optional: small type boost (keeps primordials slightly bigger)
+  const typeBoost =
+    d.type === "primordial" ? 3 :
+    d.type === "titan" ? 1 : 0;
+
+  return radiusScale(deg + typeBoost);
 }
 
 function markerId(rel) {
@@ -96,6 +103,26 @@ function renderGraph(g) {
 
   const width = graphEl.clientWidth;
   const height = graphEl.clientHeight;
+
+  // --- (A) Compute degree (#relations) for each node ---
+    const degree = new Map();
+    g.nodes.forEach(n => degree.set(n.id, 0));
+    
+    g.links.forEach(l => {
+      const s = typeof l.source === "object" ? l.source.id : l.source;
+      const t = typeof l.target === "object" ? l.target.id : l.target;
+      degree.set(s, (degree.get(s) || 0) + 1);
+      degree.set(t, (degree.get(t) || 0) + 1);
+    });
+    
+    // --- (B) Map degree -> radius ---
+    const degVals = [...degree.values()];
+    const degExtent = d3.extent(degVals); // [min,max]
+    
+    const radiusScale = d3.scaleSqrt()
+      .domain(degExtent)
+      .range([14, 38]); // <-- tweak these to make portraits bigger overall
+
 
   const svg = d3.select(graphEl)
     .append("svg")
@@ -164,7 +191,7 @@ function renderGraph(g) {
     .join("line")
     .attr("class", "halo")
     .attr("stroke", "#F3EEE3") // warm parchment halo
-    .attr("stroke-width", d => styleForRelation(d.relation).width + 8)
+    .attr("stroke-width", d => styleForRelation(d.relation).width + 3)
     .attr("stroke-linecap", "round")
     .attr("stroke-opacity", 1);
 
@@ -236,7 +263,7 @@ function renderGraph(g) {
     .force("charge", d3.forceManyBody().strength(-320))
     .force("center", d3.forceCenter(width / 2, height / 2))
     .force("y", d3.forceY(d => (d.generation ?? 0) * 120).strength(0.22))
-    .force("collide", d3.forceCollide().radius(d => nodeRadius(d) + 18));
+    .force("collide", d3.forceCollide().radius(d => nodeRadius(d) + 24));
 
   sim.on("tick", () => {
     const end = d => shortenToTarget(d);
