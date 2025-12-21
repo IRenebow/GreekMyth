@@ -133,6 +133,7 @@ function renderGraph(g) {
       .attr("d", "M0,-3L6,0L0,3")   // 🔑 THIS is the key change
       .attr("fill", s.color)
       .attr("opacity", 0.95);
+    });
 
 
   // Legend
