@@ -123,17 +123,17 @@ function renderGraph(g) {
     defs.append("marker")
       .attr("id", markerId(rel))
       .attr("viewBox", "0 -3 6 6")
-      .attr("refX", 7)          // closer to node edge
+      .attr("refX", 6.5)
       .attr("refY", 0)
-      .attr("markerWidth", 4)   // MUCH smaller
+      .attr("markerWidth", 4)
       .attr("markerHeight", 4)
       .attr("orient", "auto")
-      .attr("markerUnits", "strokeWidth") // 🔑 scale with line width
+      .attr("markerUnits", "strokeWidth")
       .append("path")
-      .attr("d", "M0,-5L10,0L0,5")
+      .attr("d", "M0,-3L6,0L0,3")   // 🔑 THIS is the key change
       .attr("fill", s.color)
       .attr("opacity", 0.95);
-  });
+
 
   // Legend
   renderLegend(g);
