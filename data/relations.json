@@ -1,7 +1,7 @@
 {
   "nodes": [
-    { "id": "chaos", "label": "Chaos", "type": "primordial", "generation": 1,"img": "images/characters/chaos.jpeg" },
-    { "id": "gaia", "label": "Gaia", "type": "primordial", "generation": 1 },
+    { "id": "chaos", "label": "Chaos", "type": "primordial", "generation": 1 ,"img": "images/characters/chaos.jpeg" },
+    { "id": "gaia", "label": "Gaia", "type": "primordial", "generation": 1, "img": "images/characters/gaia.jpeg" },
       
     { "id": "uranus", "label": "Uranus", "type": "primordial", "generation": 2 },
     { "id": "ourea", "label": "Ourea", "type": "primordial", "generation": 2 },
@@ -43,6 +43,10 @@
     { "id": "phorcys", "label": "Phorcys", "type": "primordial", "generation": 3 },
     { "id": "ceto", "label": "Ceto", "type": "primordial", "generation": 3 },
     { "id": "eurybia", "label": "Eurybia", "type": "primordial", "generation": 3 },
+    { "id": "giants", "label": "Giants", "type": "giant", "generation": 3 },
+    { "id": "meliae", "label": "Meliae", "type": "nymph", "generation": 3 },
+    { "id": "erinyes", "label": "Erinyes", "type": "primordial", "generation": 3 },
+    { "id": "aphrodite", "label": "Aphrodite", "type": "primordial", "generation": 3 },
 
     { "id": "zeus", "label": "Zeus", "type": "olympian", "generation": 4, "img": "images/characters/zeus.jpg"},
     { "id": "hera", "label": "Hera", "type": "olympian", "generation": 4 },
@@ -97,6 +101,10 @@
     { "source": "gaia", "target": "ceto", "relation": "parent" },
     { "source": "pontus", "target": "eurybia", "relation": "parent" },
     { "source": "gaia", "target": "eurybia", "relation": "parent" },
+    { "source": "uranus", "target": "giants", "relation": "parent" },
+    { "source": "uranus", "target": "meliae", "relation": "parent" },
+    { "source": "uranus", "target": "erinyes", "relation": "parent" },
+    { "source": "uranus", "target": "aphrodite", "relation": "parent" },
     { "source": "erebus", "target": "aether", "relation": "parent" },
     { "source": "erebus", "target": "hemera", "relation": "parent" },
     { "source": "nyx", "target": "aether", "relation": "parent" },
