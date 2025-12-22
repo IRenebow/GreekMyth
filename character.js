@@ -36,8 +36,12 @@ async function main() {
     }
 
 
-  document.title = c.name;
-  document.getElementById("name").textContent = c.name;
+  const roman = c.roman_name || c.roman || c.romanName;
+    const displayName = roman ? `${c.name} (${roman})` : c.name;
+    
+    document.title = displayName;
+    document.getElementById("name").textContent = displayName;
+
   document.getElementById("title").textContent = c.title ?? "";
   document.getElementById("bio").textContent = c.bio ?? "";
 

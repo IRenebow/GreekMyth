@@ -1,6 +1,7 @@
 {
   "zeus": {
     "name": "Zeus",
+    "roman_name": "Jupiter",
     "title": "King of the Olympians",
     "domains": ["Sky", "Thunder", "Law"],
     "parents": ["cronus", "rhea"],

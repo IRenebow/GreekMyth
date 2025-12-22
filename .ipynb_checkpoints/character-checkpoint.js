@@ -36,8 +36,12 @@ async function main() {
     }
 
 
-  document.title = c.name;
-  document.getElementById("name").textContent = c.name;
+  const roman = c.roman_name || c.roman || c.romanName;
+    const displayName = roman ? `${c.name} (${roman})` : c.name;
+    
+    document.title = displayName;
+    document.getElementById("name").textContent = displayName;
+
   document.getElementById("title").textContent = c.title ?? "";
   document.getElementById("bio").textContent = c.bio ?? "";
 
@@ -52,11 +56,14 @@ async function main() {
   const stories = document.getElementById("stories");
   stories.innerHTML = "";
   (c.stories ?? []).forEach(st => {
-    const item = document.createElement("li");
-    // if you have story pages, link them here
-    item.textContent = st;
-    stories.appendChild(item);
-  });
+      const item = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = `story.html?id=${encodeURIComponent(st)}`;
+      a.textContent = st;
+      item.appendChild(a);
+      stories.appendChild(item);
+    });
+
 }
 
 main();
