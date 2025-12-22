@@ -7,15 +7,26 @@
     "parents": ["cronus", "rhea"],
     "symbols": ["Thunderbolt", "Eagle"],
     "img": "images/characters/zeus.jpg",
-    "stories": ["the-titanomachy", "birth-of-athena"]
+    "stories": ["the titanomachy", "birth of athena"]
   },
   "athena": {
     "name": "Athena",
+    "roman_name": "Minerva",
     "title": "Goddess of Wisdom",
     "domains": ["Wisdom", "War", "Craft"],
     "parents": ["zeus"],
     "symbols": ["Owl", "Olive tree"],
     "img": "images/characters/athena.jpeg",
     "stories": ["odyssey", "arachne"]
+  },
+  "chaos": {
+    "name": "Chaos",
+    "roman_name": "Khaos",
+    "title": "Origin of Everything",
+    "domains": ["a gaping void", "a shadowy realm of mass and energy"],
+    "parents": [],
+    "symbols": [],
+    "img": "images/characters/chaos.jpeg",
+    "stories": ["the creation"]
   }
 }
