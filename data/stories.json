@@ -20,12 +20,11 @@
   }
   ,
   "the creation": {
-    "title": "The Birth of Athena",
-    "summary": "Athena is born from Zeus in an extraordinary way.",
-    "characters": ["zeus", "athena"],
+    "title": "The Creation",
+    "summary": "The beginning of everything.",
+    "characters": ["chaos", "athena"],
     "events": [
-      "Zeus experiences severe pain.",
-      "Athena emerges fully armed."
+      "In the beginning, there was only Chaos, the gaping emptiness. Then, either all by themselves or out of the formless void, sprang forth three more primordial deities: Gaea (Earth), Tartarus (the Underworld), and Eros (Love). Once Love was there, Gaea and Chaos were able to procreate and shape everything known and unknown in the universe."
     ]
   }
 }
