@@ -25,14 +25,14 @@ async function main() {
     return;
   }
   const portrait = document.getElementById("portrait");
-
-    if (c.img) {
-      portrait.src = c.img;
-      portrait.alt = c.name ? `${c.name} portrait` : "Character portrait";
-      portrait.style.display = "";
-    } else {
-      // hide the <img> if no picture provided
-      portrait.style.display = "none";
+    if (portrait) {
+      if (c.img) {
+        portrait.src = c.img;
+        portrait.alt = c.name ? `${c.name} portrait` : "Character portrait";
+        portrait.style.display = "";
+      } else {
+        portrait.style.display = "none";
+      }
     }
 
 
@@ -43,7 +43,9 @@ async function main() {
     document.getElementById("name").textContent = displayName;
 
   document.getElementById("title").textContent = c.title ?? "";
-  document.getElementById("bio").textContent = c.bio ?? "";
+  const bioEl = document.getElementById("bio");
+  if (bioEl) bioEl.textContent = c.bio ?? "";
+
 
   const domains = document.getElementById("domains");
   domains.innerHTML = "";
