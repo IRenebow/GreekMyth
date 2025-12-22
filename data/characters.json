@@ -11,6 +11,17 @@
   },
   "athena": {
     "name": "Athena",
+    "roman_name": "Minerva",
+    "title": "Goddess of Wisdom",
+    "domains": ["Wisdom", "War", "Craft"],
+    "parents": ["zeus"],
+    "symbols": ["Owl", "Olive tree"],
+    "img": "images/characters/athena.jpeg",
+    "stories": ["odyssey", "arachne"]
+  },
+  "chaos": {
+    "name": "Chaos",
+    "roman_name": "Khaos",
     "title": "Goddess of Wisdom",
     "domains": ["Wisdom", "War", "Craft"],
     "parents": ["zeus"],
