@@ -2,6 +2,8 @@
   "nodes": [
     { "id": "chaos", "label": "Chaos", "type": "primordial", "generation": 1 ,"img": "images/characters/chaos.jpeg" },
     { "id": "gaia", "label": "Gaia", "type": "primordial", "generation": 1, "img": "images/characters/gaia.jpeg" },
+    { "id": "tartarus", "label": "Tartarus", "type": "primordial", "generation": 1, },
+    { "id": "eros", "label": "Eros", "type": "primordial", "generation": 1, },
       
     { "id": "uranus", "label": "Uranus", "type": "primordial", "generation": 2 },
     { "id": "ourea", "label": "Ourea", "type": "primordial", "generation": 2 },
