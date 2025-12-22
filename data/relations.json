@@ -33,7 +33,8 @@
   "links": [
     { "source": "chaos", "target": "erebus", "relation": "parent" },
     { "source": "chaos", "target": "nyx", "relation": "parent" },
-    { "source": "gaia", "target": "uranus", "relation": "consort" },
+    { "source": "gaia", "target": "uranus", "relation": "parent" },
+    { "source": "gaia", "target": "uranus", "relation": "spouse" },
 
     { "source": "uranus", "target": "cronus", "relation": "parent" },
     { "source": "gaia", "target": "cronus", "relation": "parent" },
