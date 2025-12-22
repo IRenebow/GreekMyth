@@ -35,8 +35,8 @@
     "title": "Earth, Mother of Everything",
     "domains": ["earth"],
     "parents": [],
-    "symbols": [],
-    "img": "images/characters/chaos.jpeg",
-    "stories": ["the creation"]
+    "symbols": ["fruit"],
+    "img": "images/characters/gaia.jpeg",
+    "stories": ["castration of Uranus"]
   }
 }
