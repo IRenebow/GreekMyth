@@ -73,7 +73,7 @@ async function main() {
   }
 
   const res = await fetch("data/relations.json");
-  const g = await res.json();
+  const g0 = await res.json();
 
   if (NORMALIZE_CHILD_TO_PARENT) {
       g0.links = g0.links.map(l => {
