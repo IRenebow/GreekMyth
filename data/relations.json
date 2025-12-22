@@ -11,6 +11,17 @@
 
     { "id": "zeus", "label": "Zeus", "type": "olympian", "generation": 3, "img": "images/characters/zeus.jpg"},
     { "id": "hera", "label": "Hera", "type": "olympian", "generation": 3 },
+    { "id": "aether", "label": "Aether", "type": "primordial", "generation": 3 },
+    { "id": "hemera", "label": "Hemera", "type": "primordial", "generation": 3 },
+    { "id": "moros", "label": "Moros", "type": "primordial", "generation": 3 },
+    { "id": "ker", "label": "Ker", "type": "primordial", "generation": 3 },
+    { "id": "thanatos", "label": "Thanatos", "type": "primordial", "generation": 3 },
+    { "id": "hypnos", "label": "Hypnos", "type": "primordial", "generation": 3 },
+    { "id": "oneiroi", "label": "Oneiroi", "type": "primordial", "generation": 3 },
+    { "id": "gerus", "label": "Gerus", "type": "primordial", "generation": 3 },
+    { "id": "oizus", "label": "Oizus", "type": "primordial", "generation": 3 },
+    { "id": "nemesis", "label": "Nemesis", "type": "primordial", "generation": 3 },
+      
     { "id": "athena", "label": "Athena", "type": "olympian", "generation": 4,"img": "images/characters/athena.jpeg" }
   ],
   "links": [
@@ -20,6 +31,11 @@
 
     { "source": "uranus", "target": "cronus", "relation": "parent" },
     { "source": "gaia", "target": "cronus", "relation": "parent" },
+    { "source": "erebus", "target": "nyx", "relation": "sibling" },
+    { "source": "erebus", "target": "aether", "relation": "parent" },
+    { "source": "erebus", "target": "hemera", "relation": "parent" },
+    { "source": "nyx", "target": "aether", "relation": "parent" },
+    { "source": "nyx", "target": "hemera", "relation": "parent" },
 
     { "source": "cronus", "target": "zeus", "relation": "parent" },
     { "source": "rhea", "target": "zeus", "relation": "parent" },

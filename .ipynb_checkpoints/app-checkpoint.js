@@ -117,8 +117,9 @@ function renderGraph(g) {
     
       // Optional: small type boost (keeps primordials slightly bigger)
       const typeBoost =
-        d.type === "primordial" ? 3 :
-        d.type === "titan" ? 1 : 0;
+        d.type === "primordial" ? 1 :
+        d.type === "titan" ? 1 : 
+        d.type === "olympian" ? 1 :0;
     
       return radiusScale(deg + typeBoost);
     }
@@ -263,7 +264,7 @@ function renderGraph(g) {
     .force("charge", d3.forceManyBody().strength(-320))
     .force("center", d3.forceCenter(width / 2, height / 2))
     .force("y", d3.forceY(d => (d.generation ?? 0) * 120).strength(0.22))
-    .force("collide", d3.forceCollide().radius(d => nodeRadius(d) + 24));
+    .force("collide", d3.forceCollide().radius(d => nodeRadius(d) + 20));
 
   sim.on("tick", () => {
     const end = d => shortenToTarget(d);
