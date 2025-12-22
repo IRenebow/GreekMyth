@@ -18,6 +18,7 @@ const RELATION_STYLE = {
   lover:      { color: "#B0476B", width: 2.6, dash: "3,4",  label: "Lovers" },
   affair:     { color: "#6E3B5E", width: 2.6, dash: "2,6",  label: "Affair" },
   rape:       { color: "#4A0F16", width: 5.2, dash: "14,6", label: "Non-consensual union" },
+  union: { color: "#2F6B4F", width: 2.6, dash: "2,6", label: "Union (parents → union)" },
 
   // Creation & origin (blues)
   created:    { color: "#1F4E79", width: 3.0, dash: null,   label: "Created" },
@@ -74,18 +75,102 @@ async function main() {
   const res = await fetch("data/relations.json");
   const g = await res.json();
 
-  // Normalize redundant child edges (optional but recommended)
   if (NORMALIZE_CHILD_TO_PARENT) {
-    g.links = g.links.map(l => {
-      if (l.relation === "child") {
-        return { ...l, relation: "parent", source: l.target, target: l.source };
-      }
-      return l;
-    });
-  }
+      g0.links = g0.links.map(l => {
+        if (l.relation === "child") {
+          return { ...l, relation: "parent", source: l.target, target: l.source };
+        }
+        return l;
+      });
+    }
+    
+    const g = buildUnionFamilyGraph(g0);
 
   renderGraph(g);
 }
+
+function buildUnionFamilyGraph(g) {
+  // Clone to avoid mutating original too hard
+  const nodes = g.nodes.map(n => ({ ...n }));
+  const links = g.links.map(l => ({ ...l }));
+
+  // Helper: normalize link endpoints to ids
+  const sid = l => (typeof l.source === "object" ? l.source.id : l.source);
+  const tid = l => (typeof l.target === "object" ? l.target.id : l.target);
+
+  // --- 1) Collect parents for each child from "parent" relations ---
+  const parentsByChild = new Map(); // childId -> Set(parentId)
+  links.forEach(l => {
+    if (l.relation !== "parent") return;
+    const p = sid(l);
+    const c = tid(l);
+    if (!parentsByChild.has(c)) parentsByChild.set(c, new Set());
+    parentsByChild.get(c).add(p);
+  });
+
+  // --- 2) Create union nodes for children with exactly 2 parents ---
+  // We'll replace (A->child, B->child) with (A->union, B->union, union->child)
+  const unionIdByPair = new Map(); // "A|B" -> unionNodeId
+
+  function pairKey(a, b) {
+    return [a, b].sort().join("|");
+  }
+
+  function ensureUnionNode(a, b) {
+    const key = pairKey(a, b);
+    if (unionIdByPair.has(key)) return unionIdByPair.get(key);
+
+    const id = `union:${key}`;
+    unionIdByPair.set(key, id);
+
+    nodes.push({
+      id,
+      label: "",          // usually no label for unions
+      isUnion: true,      // flag for styling / click behavior
+      type: "union",
+      // optional: give unions a generation = max(parents)+0.2 so they sit between
+      generation: undefined
+    });
+
+    return id;
+  }
+
+  // We'll build a new links array
+  const newLinks = [];
+
+  // Keep all non-parent links as-is (spouse, enemy, etc.)
+  links.forEach(l => {
+    if (l.relation !== "parent") newLinks.push(l);
+  });
+
+  // For each child, decide whether to route through union or direct
+  parentsByChild.forEach((pset, childId) => {
+    const parents = Array.from(pset);
+
+    if (parents.length === 2) {
+      const [p1, p2] = parents;
+      const u = ensureUnionNode(p1, p2);
+
+      // parent -> union links (you can style these as "union" or reuse "spouse")
+      newLinks.push({ source: p1, target: u, relation: "union" });
+      newLinks.push({ source: p2, target: u, relation: "union" });
+
+      // union -> child is the actual parentage arrow
+      newLinks.push({ source: u, target: childId, relation: "parent" });
+    } else {
+      // 0 or 1 or >2 parents:
+      // - 1 parent = single-parent birth: keep direct
+      // - >2 = unusual: keep direct from each parent
+      parents.forEach(p => {
+        newLinks.push({ source: p, target: childId, relation: "parent" });
+      });
+    }
+  });
+
+  // Ensure your style table has a "union" entry
+  return { nodes, links: newLinks };
+}
+
 
 function renderGraph(g) {
   graphEl.innerHTML = "";
@@ -145,6 +230,7 @@ function renderGraph(g) {
   const defs = svg.append("defs");
   // --- Image patterns for character portraits ---
     g.nodes.forEach(d => {
+      if (d.isUnion) return;
       if (!d.img) return;
     
       const size = nodeRadius(d) * 2;
@@ -218,28 +304,47 @@ function renderGraph(g) {
     .attr("class", "node")
     .style("cursor", "grab");
 
-  nodes.append("circle")
-      .attr("r", d => nodeRadius(d))
-      .attr("fill", d => d.img ? `url(#img-${d.id})` : "#fff")
-    .attr("stroke", "#333")
-    .attr("stroke-width", 1.5);
+  // Main shape
+    nodes.each(function(d) {
+      const g = d3.select(this);
+    
+      if (d.isUnion) {
+        const r = 10; // union size
+        g.append("rect")
+          .attr("x", -r)
+          .attr("y", -r)
+          .attr("width", 2 * r)
+          .attr("height", 2 * r)
+          .attr("transform", "rotate(45)")
+          .attr("fill", "#F3EEE3")
+          .attr("stroke", "#333")
+          .attr("stroke-width", 1.5);
+      } else {
+        g.append("circle")
+          .attr("r", d => nodeRadius(d))
+          .attr("fill", d => d.img ? `url(#img-${d.id})` : "#fff")
+          .attr("stroke", "#333")
+          .attr("stroke-width", 1.5);
+    
+        g.append("circle")
+          .attr("r", d => nodeRadius(d))
+          .attr("fill", "none")
+          .attr("stroke", "rgba(0,0,0,0.15)")
+          .attr("stroke-width", 1);
+      }
+    });
 
-  nodes.append("circle")
-      .attr("r", d => nodeRadius(d))
-      .attr("fill", "none")
-      .attr("stroke", "rgba(0,0,0,0.15)")
-      .attr("stroke-width", 1);
 
 
-  nodes.append("text")
-    .text(d => d.label)
-    .attr("x", d => nodeRadius(d) + 6)
-    .attr("y", 4)
-    .attr("font-size", 12);
+    nodes.filter(d => !d.isUnion).append("text")
+      .text(d => d.label)
+      .attr("x", d => nodeRadius(d) + 6)
+      .attr("y", 4)
+      .attr("font-size", 12);
 
-  nodes.on("click", (event, d) => {
-      // prevent click from triggering drag behavior weirdness
+    nodes.on("click", (event, d) => {
       event.stopPropagation();
+      if (d.isUnion) return;
       window.location.href = `character.html?id=${encodeURIComponent(d.id)}`;
     });
 
