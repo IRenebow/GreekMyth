@@ -36,7 +36,6 @@
 
     { "source": "uranus", "target": "cronus", "relation": "parent" },
     { "source": "gaia", "target": "cronus", "relation": "parent" },
-    { "source": "erebus", "target": "nyx", "relation": "sibling" },
     { "source": "erebus", "target": "aether", "relation": "parent" },
     { "source": "erebus", "target": "hemera", "relation": "parent" },
     { "source": "nyx", "target": "aether", "relation": "parent" },
