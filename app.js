@@ -123,13 +123,15 @@ function buildUnionFamilyGraph(g) {
     const id = `union:${key}`;
     unionIdByPair.set(key, id);
 
+    const g1 = g.nodes.find(n => n.id === a)?.generation ?? 0;
+    const g2 = g.nodes.find(n => n.id === b)?.generation ?? 0;
+    
     nodes.push({
       id,
-      label: "",          // usually no label for unions
-      isUnion: true,      // flag for styling / click behavior
+      label: "",
+      isUnion: true,
       type: "union",
-      // optional: give unions a generation = max(parents)+0.2 so they sit between
-      generation: undefined
+      generation: (g1 + g2) / 2 + 0.3   // 🔑 sits slightly below parents
     });
 
     return id;
@@ -368,7 +370,7 @@ function renderGraph(g) {
     .force("link", d3.forceLink(g.links).id(d => d.id).distance(90))
     .force("charge", d3.forceManyBody().strength(-320))
     .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("y", d3.forceY(d => (d.generation ?? 0) * 120).strength(0.22))
+    .force("y", d3.forceY(d => (d.generation ?? 0) * 120).strength(0.35))
     .force("collide", d3.forceCollide().radius(d => nodeRadius(d) + 20));
 
   sim.on("tick", () => {

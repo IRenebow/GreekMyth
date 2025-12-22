@@ -39,8 +39,8 @@
 
     { "source": "uranus", "target": "cronus", "relation": "parent" },
     { "source": "gaia", "target": "cronus", "relation": "parent" },
-    { "source": "uranus", "target": "cronus", "relation": "parent" },
-    { "source": "gaia", "target": "cronus", "relation": "parent" },
+    { "source": "uranus", "target": "cyclop", "relation": "parent" },
+    { "source": "gaia", "target": "cyclop", "relation": "parent" },
     { "source": "uranus", "target": "cronus", "relation": "parent" },
     { "source": "gaia", "target": "cronus", "relation": "parent" },
     { "source": "uranus", "target": "cronus", "relation": "parent" },
