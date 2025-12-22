@@ -3,8 +3,8 @@ function getStoryId() {
   return params.get("id");
 }
 
-function li(text) {
-  const el = document.createElement("li");
+function p(text) {
+  const el = document.createElement("p");
   el.textContent = text;
   return el;
 }
@@ -29,10 +29,14 @@ async function main() {
   document.getElementById("storyTitle").textContent = s.title ?? id;
   document.getElementById("summary").textContent = s.summary ?? "";
 
+  // Events as paragraphs
   const eventsEl = document.getElementById("events");
   eventsEl.innerHTML = "";
-  (s.events ?? []).forEach(e => eventsEl.appendChild(li(e)));
+  (s.events ?? []).forEach(e => {
+    eventsEl.appendChild(p(e));
+  });
 
+  // Characters remain as a list
   const charsEl = document.getElementById("characters");
   charsEl.innerHTML = "";
   (s.characters ?? []).forEach(cid => {
