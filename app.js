@@ -131,7 +131,7 @@ function buildUnionFamilyGraph(g) {
       label: "",
       isUnion: true,
       type: "union",
-      generation: (g1 + g2) / 2 + 0.3   // 🔑 sits slightly below parents
+      generation: (g1 + g2) / 2   // 🔑 sits slightly below parents
     });
 
     return id;
