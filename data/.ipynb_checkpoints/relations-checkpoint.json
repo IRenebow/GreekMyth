@@ -4,6 +4,8 @@
     { "id": "gaia", "label": "Gaia", "type": "primordial", "generation": 1 },
       
     { "id": "uranus", "label": "Uranus", "type": "primordial", "generation": 2 },
+    { "id": "ourea", "label": "Ourea", "type": "primordial", "generation": 2 },
+    { "id": "pontus", "label": "Pontus", "type": "primordial", "generation": 2 },
     { "id": "erebus", "label": "Erebus", "type": "primordial", "generation": 2 },
     { "id": "nyx", "label": "Nyx", "type": "primordial", "generation": 2 },
 
@@ -36,6 +38,11 @@
     { "id": "philotes", "label": "Philotes", "type": "primordial", "generation": 3 },
     { "id": "momos", "label": "Momos", "type": "primordial", "generation": 3 },
     { "id": "hesperides", "label": "Hesperides", "type": "primordial", "generation": 3 },
+    { "id": "nereus", "label": "Nereus", "type": "primordial", "generation": 3 },
+    { "id": "thaumas", "label": "Thaumas", "type": "primordial", "generation": 3 },
+    { "id": "phorcys", "label": "Phorcys", "type": "primordial", "generation": 3 },
+    { "id": "ceto", "label": "Ceto", "type": "primordial", "generation": 3 },
+    { "id": "eurybia", "label": "Eurybia", "type": "primordial", "generation": 3 },
 
     { "id": "zeus", "label": "Zeus", "type": "olympian", "generation": 4, "img": "images/characters/zeus.jpg"},
     { "id": "hera", "label": "Hera", "type": "olympian", "generation": 4 },
@@ -47,7 +54,9 @@
     { "source": "chaos", "target": "nyx", "relation": "parent" },
     { "source": "gaia", "target": "uranus", "relation": "parent" },
     { "source": "gaia", "target": "uranus", "relation": "spouse" },
-
+    { "source": "gaia", "target": "ourea", "relation": "parent" },
+    { "source": "gaia", "target": "pontus", "relation": "parent" },
+      
     { "source": "uranus", "target": "cronus", "relation": "parent" },
     { "source": "gaia", "target": "cronus", "relation": "parent" },
     { "source": "uranus", "target": "cyclops", "relation": "parent" },
@@ -78,6 +87,16 @@
     { "source": "gaia", "target": "lapetus", "relation": "parent" },
     { "source": "uranus", "target": "rhea", "relation": "parent" },
     { "source": "gaia", "target": "rhea", "relation": "parent" },
+    { "source": "pontus", "target": "nereus", "relation": "parent" },
+    { "source": "gaia", "target": "nereus", "relation": "parent" },
+    { "source": "pontus", "target": "thaumas", "relation": "parent" },
+    { "source": "gaia", "target": "thaumas", "relation": "parent" },
+    { "source": "pontus", "target": "phorcys", "relation": "parent" },
+    { "source": "gaia", "target": "phorcys", "relation": "parent" },
+    { "source": "pontus", "target": "ceto", "relation": "parent" },
+    { "source": "gaia", "target": "ceto", "relation": "parent" },
+    { "source": "pontus", "target": "eurybia", "relation": "parent" },
+    { "source": "gaia", "target": "eurybia", "relation": "parent" },
     { "source": "erebus", "target": "aether", "relation": "parent" },
     { "source": "erebus", "target": "hemera", "relation": "parent" },
     { "source": "nyx", "target": "aether", "relation": "parent" },

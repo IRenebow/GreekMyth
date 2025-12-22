@@ -23,7 +23,17 @@
     "name": "Chaos",
     "roman_name": "Khaos",
     "title": "Origin of Everything",
-    "domains": ["a gaping void", "a shadowy realm of mass and energy"],
+    "domains": ["void"],
+    "parents": [],
+    "symbols": [],
+    "img": "images/characters/chaos.jpeg",
+    "stories": ["the creation"]
+  },
+  "gaia": {
+    "name": "Gaia",
+    "roman_name": "Terra",
+    "title": "Earth, Mother of Everything",
+    "domains": ["earth"],
     "parents": [],
     "symbols": [],
     "img": "images/characters/chaos.jpeg",
