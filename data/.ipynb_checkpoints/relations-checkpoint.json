@@ -43,6 +43,7 @@
     { "source": "nyx", "target": "hemera", "relation": "parent" },
     { "source": "nyx", "target": "moros", "relation": "parent" },
     { "source": "nyx", "target": "ker", "relation": "parent" },
+    { "source": "nyx", "target": "Nemesis", "relation": "parent" },
     { "source": "nyx", "target": "thanatos", "relation": "parent" },
     { "source": "nyx", "target": "hypnos", "relation": "parent" },
     { "source": "nyx", "target": "oneiroi", "relation": "parent" },
