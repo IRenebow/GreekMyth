@@ -1,17 +1,21 @@
 {
   "nodes": [
     { "id": "chaos", "label": "Chaos", "type": "primordial", "generation": 1,"img": "images/characters/chaos.jpeg" },
-    { "id": "gaia", "label": "Gaia", "type": "primordial", "generation": 2 },
-    { "id": "uranus", "label": "Uranus", "type": "primordial", "generation": 2 },
+    { "id": "gaia", "label": "Gaia", "type": "primordial", "generation": 1 },
+    { "id": "uranus", "label": "Uranus", "type": "primordial", "generation": 1 },
 
-    { "id": "cronus", "label": "Cronus", "type": "titan", "generation": 3 },
-    { "id": "rhea", "label": "Rhea", "type": "titan", "generation": 3 },
+    { "id": "cronus", "label": "Cronus", "type": "titan", "generation": 2 },
+    { "id": "rhea", "label": "Rhea", "type": "titan", "generation": 2 },
+    { "id": "erebus", "label": "Erebus", "type": "primordial", "generation": 2 },
+    { "id": "nyx", "label": "Nyx", "type": "primordial", "generation": 2 },
 
-    { "id": "zeus", "label": "Zeus", "type": "olympian", "generation": 4, "img": "images/characters/zeus.jpg"},
-    { "id": "hera", "label": "Hera", "type": "olympian", "generation": 4 },
-    { "id": "athena", "label": "Athena", "type": "olympian", "generation": 5,"img": "images/characters/athena.jpeg" }
+    { "id": "zeus", "label": "Zeus", "type": "olympian", "generation": 3, "img": "images/characters/zeus.jpg"},
+    { "id": "hera", "label": "Hera", "type": "olympian", "generation": 3 },
+    { "id": "athena", "label": "Athena", "type": "olympian", "generation": 4,"img": "images/characters/athena.jpeg" }
   ],
   "links": [
+    { "source": "chaos", "target": "erebus", "relation": "parent" },
+    { "source": "chaos", "target": "nyx", "relation": "parent" },
     { "source": "gaia", "target": "uranus", "relation": "consort" },
 
     { "source": "uranus", "target": "cronus", "relation": "parent" },
