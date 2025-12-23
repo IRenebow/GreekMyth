@@ -23,7 +23,7 @@
     "name": "Chaos",
     "roman_name": "Khaos",
     "title": "Origin of Everything",
-    "domains": ["void"],
+    "domains": ["Void"],
     "parents": [],
     "symbols": [],
     "img": "images/characters/chaos.jpeg",
@@ -33,9 +33,9 @@
     "name": "Gaia",
     "roman_name": "Terra",
     "title": "Earth, Mother of Everything",
-    "domains": ["earth"],
+    "domains": ["Earth"],
     "parents": [],
-    "symbols": ["fruit"],
+    "symbols": ["Fruit"],
     "img": "images/characters/gaia.jpeg",
     "stories": ["castration of Uranus"]
   },
@@ -43,9 +43,9 @@
     "name": "Cronus",
     "roman_name": "Saturn",
     "title": "Leader of Titans",
-    "domains": ["harvest (I wonder what he's harvesting hehe)"],
+    "domains": ["Harvest (I wonder what he's harvesting hehe)"],
     "parents": [],
-    "symbols": ["harpe (the one he used to castrate his daddy)", "grain"],
+    "symbols": ["Harpe (the one he used to castrate his daddy)", "grain"],
     "img": "images/characters/cronus.jpeg",
     "stories": ["castration of Uranus", "Cronus devouring his children", "the titanomachy"]
   }

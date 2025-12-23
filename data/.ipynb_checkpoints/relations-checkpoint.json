@@ -61,7 +61,9 @@
     { "id": "demeter", "label": "Demeter", "type": "olympian", "generation": 4 },
     { "id": "hades", "label": "Hades", "type": "olympian", "generation": 4 },
     { "id": "poseidon", "label": "Poseidon", "type": "olympian", "generation": 4 },
+    { "id": "clymene", "label": "Clymene", "type": "titan", "generation": 4 },
       
+    { "id": "atlas", "label": "Atlas", "type": "titan", "generation": 5 },
     { "id": "athena", "label": "Athena", "type": "olympian", "generation": 5,"img": "images/characters/athena.jpeg" }
   ],
   "links": [
@@ -137,8 +139,15 @@
     { "source": "nyx", "target": "hesperides", "relation": "parent" },
     { "source": "oceanus", "target": "metis", "relation": "parent" },
     { "source": "tethys", "target": "metis", "relation": "parent" },
+    { "source": "oceanus", "target": "clymene", "relation": "parent" },
+    { "source": "tethys", "target": "clymene", "relation": "parent" },
       
+    { "source": "lapetus", "target": "atlas", "relation": "parent" },
+    { "source": "clymene", "target": "atlas", "relation": "parent" },
     { "source": "zeus", "target": "cronus", "relation": "killed" },
+    { "source": "zeus", "target": "campe", "relation": "killed" },
+    { "source": "zeus", "target": "hecatoncheires", "relation": "freed" },
+    { "source": "zeus", "target": "cyclopes", "relation": "freed" },
     { "source": "cronus", "target": "zeus", "relation": "parent" },
     { "source": "rhea", "target": "zeus", "relation": "parent" },
     { "source": "cronus", "target": "hestia", "relation": "parent" },
