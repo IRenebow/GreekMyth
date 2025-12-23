@@ -137,7 +137,8 @@
     { "source": "nyx", "target": "hesperides", "relation": "parent" },
     { "source": "oceanus", "target": "metis", "relation": "parent" },
     { "source": "tethys", "target": "metis", "relation": "parent" },
-
+      
+    { "source": "zeus", "target": "cronus", "relation": "killed" },
     { "source": "cronus", "target": "zeus", "relation": "parent" },
     { "source": "rhea", "target": "zeus", "relation": "parent" },
     { "source": "cronus", "target": "hestia", "relation": "parent" },
@@ -148,8 +149,8 @@
     { "source": "rhea", "target": "hera", "relation": "parent" },
     { "source": "cronus", "target": "hades", "relation": "parent" },
     { "source": "rhea", "target": "hades", "relation": "parent" },
-    { "source": "cronus", "target": "zeus", "relation": "parent" },
-    { "source": "rhea", "target": "zeus", "relation": "parent" },
+    { "source": "cronus", "target": "poseidon", "relation": "parent" },
+    { "source": "rhea", "target": "poseidon", "relation": "parent" },
     { "source": "adrasteia", "target": "zeus", "relation": "raised" },
     { "source": "ida", "target": "zeus", "relation": "raised" },
     { "source": "amalthea", "target": "zeus", "relation": "raised" },

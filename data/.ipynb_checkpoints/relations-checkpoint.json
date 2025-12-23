@@ -57,6 +57,10 @@
     { "id": "ida", "label": "Ida", "type": "nymph", "generation": 4 },
     { "id": "amalthea", "label": "Amalthea", "type": "goat", "generation": 4 },
     { "id": "metis", "label": "Metis", "type": "titan", "generation": 4 },
+    { "id": "hestia", "label": "Hestia", "type": "olympian", "generation": 4 },
+    { "id": "demeter", "label": "Demeter", "type": "olympian", "generation": 4 },
+    { "id": "hades", "label": "Hades", "type": "olympian", "generation": 4 },
+    { "id": "poseidon", "label": "Poseidon", "type": "olympian", "generation": 4 },
       
     { "id": "athena", "label": "Athena", "type": "olympian", "generation": 5,"img": "images/characters/athena.jpeg" }
   ],
@@ -133,9 +137,20 @@
     { "source": "nyx", "target": "hesperides", "relation": "parent" },
     { "source": "oceanus", "target": "metis", "relation": "parent" },
     { "source": "tethys", "target": "metis", "relation": "parent" },
-
+      
+    { "source": "zeus", "target": "cronus", "relation": "killed" },
     { "source": "cronus", "target": "zeus", "relation": "parent" },
     { "source": "rhea", "target": "zeus", "relation": "parent" },
+    { "source": "cronus", "target": "hestia", "relation": "parent" },
+    { "source": "rhea", "target": "hestia", "relation": "parent" },
+    { "source": "cronus", "target": "demeter", "relation": "parent" },
+    { "source": "rhea", "target": "demeter", "relation": "parent" },
+    { "source": "cronus", "target": "hera", "relation": "parent" },
+    { "source": "rhea", "target": "hera", "relation": "parent" },
+    { "source": "cronus", "target": "hades", "relation": "parent" },
+    { "source": "rhea", "target": "hades", "relation": "parent" },
+    { "source": "cronus", "target": "poseidon", "relation": "parent" },
+    { "source": "rhea", "target": "poseidon", "relation": "parent" },
     { "source": "adrasteia", "target": "zeus", "relation": "raised" },
     { "source": "ida", "target": "zeus", "relation": "raised" },
     { "source": "amalthea", "target": "zeus", "relation": "raised" },
