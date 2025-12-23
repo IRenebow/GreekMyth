@@ -53,6 +53,10 @@
 
     { "id": "zeus", "label": "Zeus", "type": "olympian", "generation": 4, "img": "images/characters/zeus.jpg"},
     { "id": "hera", "label": "Hera", "type": "olympian", "generation": 4 },
+    { "id": "adrasteia", "label": "Adrasteia", "type": "nymph", "generation": 4 },
+    { "id": "ida", "label": "Ida", "type": "nymph", "generation": 4 },
+    { "id": "amalthea", "label": "Amalthea", "type": "goat", "generation": 4 },
+    { "id": "metis", "label": "Metis", "type": "titan", "generation": 4 },
       
     { "id": "athena", "label": "Athena", "type": "olympian", "generation": 5,"img": "images/characters/athena.jpeg" }
   ],
@@ -127,10 +131,16 @@
     { "source": "nyx", "target": "philotes", "relation": "parent" },
     { "source": "nyx", "target": "momos", "relation": "parent" },
     { "source": "nyx", "target": "hesperides", "relation": "parent" },
+    { "source": "oceanus", "target": "metis", "relation": "parent" },
+    { "source": "tethys", "target": "metis", "relation": "parent" },
 
     { "source": "cronus", "target": "zeus", "relation": "parent" },
     { "source": "rhea", "target": "zeus", "relation": "parent" },
-
+    { "source": "adrasteia", "target": "zeus", "relation": "raised" },
+    { "source": "ida", "target": "zeus", "relation": "raised" },
+    { "source": "amalthea", "target": "zeus", "relation": "raised" },
+      
+    { "source": "zeus", "target": "metis", "relation": "spouse" },
     { "source": "zeus", "target": "hera", "relation": "spouse" },
 
     { "source": "zeus", "target": "athena", "relation": "parent" }

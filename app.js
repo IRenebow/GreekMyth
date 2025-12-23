@@ -21,7 +21,7 @@ const RELATION_STYLE = {
   union: { color: "#2F6B4F", width: 2.6, dash: "2,6", label: "Union (parents → union)" },
 
   // Creation & origin (blues)
-  created:    { color: "#1F4E79", width: 3.0, dash: null,   label: "Created" },
+  raised:    { color: "#1F4E79", width: 3.0, dash: null,   label: "Raised" },
   born_from:  { color: "#4E7FA6", width: 2.8, dash: "4,3",  label: "Born from" },
   fashioned:  { color: "#2F3E4E", width: 2.8, dash: "1,4",  label: "Fashioned / crafted" },
 
