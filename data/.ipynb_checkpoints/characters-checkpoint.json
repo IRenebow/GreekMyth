@@ -7,7 +7,7 @@
     "parents": ["cronus", "rhea"],
     "symbols": ["Thunderbolt", "Eagle"],
     "img": "images/characters/zeus.jpg",
-    "stories": ["the titanomachy", "birth of athena"]
+    "stories": ["Cronus devouring his children", "the titanomachy", "birth of athena"]
   },
   "athena": {
     "name": "Athena",
@@ -38,5 +38,15 @@
     "symbols": ["fruit"],
     "img": "images/characters/gaia.jpeg",
     "stories": ["castration of Uranus"]
+  },
+  "cronus": {
+    "name": "Cronus",
+    "roman_name": "Saturn",
+    "title": "Leader of Titans",
+    "domains": ["harvest (I wonder what he's harvesting hehe)"],
+    "parents": [],
+    "symbols": ["harpe (the one he used to castrate his daddy)", "grain"],
+    "img": "images/characters/cronus.jpeg",
+    "stories": ["castration of Uranus", "Cronus devouring his children"]
   }
 }
