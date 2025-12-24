@@ -81,6 +81,8 @@
     { "source": "gaia", "target": "cyclopes", "relation": "parent" },
     { "source": "uranus", "target": "hecatoncheires", "relation": "parent" },
     { "source": "gaia", "target": "hecatoncheires", "relation": "parent" },
+    { "source": "cronus", "target": "hecatoncheires", "relation": "imprisoned" },
+    { "source": "cronus", "target": "cyclopes", "relation": "imprisoned" },
     { "source": "campe", "target": "hecatoncheires", "relation": "imprisoned" },
     { "source": "campe", "target": "cyclopes", "relation": "imprisoned" },
     { "source": "uranus", "target": "oceanus", "relation": "parent" },
@@ -169,6 +171,7 @@
       
     { "source": "zeus", "target": "metis", "relation": "spouse" },
     { "source": "zeus", "target": "hera", "relation": "spouse" },
+    { "source": "zeus", "target": "atlas", "relation": "punished" },
 
     { "source": "zeus", "target": "athena", "relation": "parent" }
   ]

@@ -187,8 +187,8 @@ function renderGraph(g) {
     g.links.forEach(l => {
       const s = typeof l.source === "object" ? l.source.id : l.source;
       const t = typeof l.target === "object" ? l.target.id : l.target;
-      degree.set(s, (degree.get(s) || 0) + 1);
-      degree.set(t, (degree.get(t) || 0) + 1);
+      degree.set(s, (degree.get(s) || 0) + 1.5);
+      degree.set(t, (degree.get(t) || 0) + 1.5);
     });
     
     // --- (B) Map degree -> radius ---

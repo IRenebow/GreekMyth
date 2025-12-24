@@ -64,6 +64,7 @@
     { "id": "clymene", "label": "Clymene", "type": "titan", "generation": 4 },
       
     { "id": "atlas", "label": "Atlas", "type": "titan", "generation": 5 },
+    { "id": "prometheus", "label": "Prometheus", "type": "titan", "generation": 5 },
     { "id": "athena", "label": "Athena", "type": "olympian", "generation": 5,"img": "images/characters/athena.jpeg" }
   ],
   "links": [
@@ -80,6 +81,8 @@
     { "source": "gaia", "target": "cyclopes", "relation": "parent" },
     { "source": "uranus", "target": "hecatoncheires", "relation": "parent" },
     { "source": "gaia", "target": "hecatoncheires", "relation": "parent" },
+    { "source": "cronus", "target": "hecatoncheires", "relation": "imprisoned" },
+    { "source": "cronus", "target": "cyclopes", "relation": "imprisoned" },
     { "source": "campe", "target": "hecatoncheires", "relation": "imprisoned" },
     { "source": "campe", "target": "cyclopes", "relation": "imprisoned" },
     { "source": "uranus", "target": "oceanus", "relation": "parent" },
@@ -144,6 +147,8 @@
       
     { "source": "lapetus", "target": "atlas", "relation": "parent" },
     { "source": "clymene", "target": "atlas", "relation": "parent" },
+    { "source": "lapetus", "target": "prometheus", "relation": "parent" },
+    { "source": "clymene", "target": "prometheus", "relation": "parent" },
     { "source": "zeus", "target": "cronus", "relation": "killed" },
     { "source": "zeus", "target": "campe", "relation": "killed" },
     { "source": "zeus", "target": "hecatoncheires", "relation": "freed" },
@@ -166,6 +171,7 @@
       
     { "source": "zeus", "target": "metis", "relation": "spouse" },
     { "source": "zeus", "target": "hera", "relation": "spouse" },
+    { "source": "zeus", "target": "atlas", "relation": "punished" },
 
     { "source": "zeus", "target": "athena", "relation": "parent" }
   ]
