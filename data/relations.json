@@ -91,7 +91,7 @@
     { "id": "alcmene", "label": "Alcmene", "type": "mortal", "generation": 7 },
 
     { "id": "dionysus", "label": "Dionysus", "type": "olympian", "generation": 8 },
-    { "id": "hercules", "label": "Hercules", "type": "demigod", "generation": 8 },
+    { "id": "hercules", "label": "Hercules", "type": "demigod", "generation": 8 }
   ],
   "links": [
     { "source": "chaos", "target": "erebus", "relation": "parent" },

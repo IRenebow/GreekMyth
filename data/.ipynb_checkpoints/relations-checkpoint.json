@@ -11,7 +11,7 @@
     { "id": "erebus", "label": "Erebus", "type": "primordial", "generation": 2 },
     { "id": "nyx", "label": "Nyx", "type": "primordial", "generation": 2 },
 
-    { "id": "typhon", "label": "Typhon", "type": "monster", "generation": 3 },
+    { "id": "typhoneus", "label": "Typhoneus", "type": "monster", "generation": 3 },
     { "id": "cyclopes", "label": "Cyclopes", "type": "cyclope", "generation": 3 },
     { "id": "hecatoncheires", "label": "Hecatoncheires", "type": "hecatoncheiry", "generation": 3 },
     { "id": "campe", "label": "Campe", "type": "dragon", "generation": 3 },
@@ -91,7 +91,7 @@
     { "id": "alcmene", "label": "Alcmene", "type": "mortal", "generation": 7 },
 
     { "id": "dionysus", "label": "Dionysus", "type": "olympian", "generation": 8 },
-    { "id": "hercules", "label": "Hercules", "type": "demigod", "generation": 8 },
+    { "id": "hercules", "label": "Hercules", "type": "demigod", "generation": 8 }
   ],
   "links": [
     { "source": "chaos", "target": "erebus", "relation": "parent" },
@@ -101,8 +101,8 @@
     { "source": "gaia", "target": "ourea", "relation": "parent" },
     { "source": "gaia", "target": "pontus", "relation": "parent" },
       
-    { "source": "uranus", "target": "typhon", "relation": "parent" },
-    { "source": "gaia", "target": "typhon", "relation": "parent" },
+    { "source": "uranus", "target": "typhoneus", "relation": "parent" },
+    { "source": "gaia", "target": "typhoneus", "relation": "parent" },
     { "source": "uranus", "target": "cronus", "relation": "parent" },
     { "source": "gaia", "target": "cronus", "relation": "parent" },
     { "source": "uranus", "target": "cyclopes", "relation": "parent" },
