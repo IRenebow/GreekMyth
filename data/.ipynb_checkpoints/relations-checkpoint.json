@@ -206,7 +206,7 @@
     { "source": "zeus", "target": "hera", "relation": "spouse" },
     { "source": "zeus", "target": "atlas", "relation": "punished" },
     { "source": "zeus", "target": "typhoneus", "relation": "punished" },
-    { "source": "plaione", "target": "maia", "relation": "parent" },
+    { "source": "pleione", "target": "maia", "relation": "parent" },
     { "source": "atlas", "target": "maia", "relation": "parent" },
     { "source": "zeus", "target": "leto", "relation": "lover" },
     { "source": "zeus", "target": "maia", "relation": "affair" },
