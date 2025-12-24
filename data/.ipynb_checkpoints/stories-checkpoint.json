@@ -1,5 +1,5 @@
 {
-  "birth of athena": {
+  "birth of Athena": {
     "title": "The Birth of Athena",
     "summary": "Athena is born from Zeus in an extraordinary way.",
     "characters": ["zeus", "athena"],
@@ -41,6 +41,16 @@
     "characters": ["zeus", "cronus", "atlas", "gaia","cyclopes", "hecatoncheires"],
     "events": [
       "Although Cronus released all his children, he was still in command – and yet to be defeated. He was too old to protect himself from the attacks of his progeny, but he enlisted the help of the faithful Titans, who also feared the new generation of gods. This led to a decade-long war between the Titans and the Olympians, remembered by generations hence as the Titanomachy. Atlas became the Titans’ leader and led his armies to many victories. At one point, it even seemed that Zeus would be defeated. However, at the advice of Gaia, he went to Tartarus, killed Campe and released the Cyclopes and the Hecatoncheires. In gratitude, the Cyclopes provided Zeus with his signature thunderbolt; they also made a trident for Poseidon and a helmet of invisibility for Hades. The tables had turned.",
+    "However, as so many times before, the final victory would not be the result of brute force, but it would happen due to a cunning little trick, possibly devised by Prometheus, who deserted from the Titans’ army beforehand. Armed with boulders, Hecatoncheires set an ambush for the Titans. At the right time, Zeus retreated his forces, drawing the Titans into the Hecatoncheires’ trap. The Hundred-Handed ones started raining down hundreds of boulders, with such a fury that the Titans thought the mountains were falling down upon them. They ran away, and Zeus could finally consider himself the King of the Universe.",
+    "Zeus exiled the Titans who had fought against him into Tartarus. He made an exception with Atlas, though: being the leader of the opposing force, he was punished to hold the universe on his shoulders."
+    ]
+  },
+  "Zeus defeating Typhon": {
+    "title": "Zeus defeating Typhon",
+    "summary": "Gaia created monster Typhon to revenge the imprisonment of her children. Zeus defeated Typhon",
+    "characters": ["zeus", "typhon", "gaia"],
+    "events": [
+      "Just after the Titanomachy, his grandmother Gaea, outraged by the imprisonment of her children, issued forth one last child of hers, the monstrous Typhon. He was so fearsome that most of the gods fled the second they saw him; however, Zeus didn’t hesitate. He faced the monster and using the power of his lightning bolts, he was able to defeat it. Typhon was subsequently buried under Mount Etna in Sicily.",
     "However, as so many times before, the final victory would not be the result of brute force, but it would happen due to a cunning little trick, possibly devised by Prometheus, who deserted from the Titans’ army beforehand. Armed with boulders, Hecatoncheires set an ambush for the Titans. At the right time, Zeus retreated his forces, drawing the Titans into the Hecatoncheires’ trap. The Hundred-Handed ones started raining down hundreds of boulders, with such a fury that the Titans thought the mountains were falling down upon them. They ran away, and Zeus could finally consider himself the King of the Universe.",
     "Zeus exiled the Titans who had fought against him into Tartarus. He made an exception with Atlas, though: being the leader of the opposing force, he was punished to hold the universe on his shoulders."
     ]

@@ -7,7 +7,7 @@
     "parents": ["cronus", "rhea"],
     "symbols": ["Thunderbolt", "Eagle"],
     "img": "images/characters/zeus.jpg",
-    "stories": ["Cronus devouring his children", "the titanomachy", "birth of athena"]
+    "stories": ["Cronus devouring his children", "the titanomachy", "birth of Athena", "Zeus defeating Typhon"]
   },
   "athena": {
     "name": "Athena",

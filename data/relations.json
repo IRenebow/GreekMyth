@@ -11,7 +11,7 @@
     { "id": "erebus", "label": "Erebus", "type": "primordial", "generation": 2 },
     { "id": "nyx", "label": "Nyx", "type": "primordial", "generation": 2 },
 
-    { "id": "typhon", "label": "Typhone", "type": "monster", "generation": 3 },
+    { "id": "typhon", "label": "Typhon", "type": "monster", "generation": 3 },
     { "id": "cyclopes", "label": "Cyclopes", "type": "cyclope", "generation": 3 },
     { "id": "hecatoncheires", "label": "Hecatoncheires", "type": "hecatoncheiry", "generation": 3 },
     { "id": "campe", "label": "Campe", "type": "dragon", "generation": 3 },
@@ -76,6 +76,8 @@
     { "source": "gaia", "target": "ourea", "relation": "parent" },
     { "source": "gaia", "target": "pontus", "relation": "parent" },
       
+    { "source": "uranus", "target": "typhon", "relation": "parent" },
+    { "source": "gaia", "target": "typhon", "relation": "parent" },
     { "source": "uranus", "target": "cronus", "relation": "parent" },
     { "source": "gaia", "target": "cronus", "relation": "parent" },
     { "source": "uranus", "target": "cyclopes", "relation": "parent" },
@@ -173,6 +175,7 @@
     { "source": "zeus", "target": "metis", "relation": "spouse" },
     { "source": "zeus", "target": "hera", "relation": "spouse" },
     { "source": "zeus", "target": "atlas", "relation": "punished" },
+    { "source": "zeus", "target": "typhon", "relation": "punished" },
 
     { "source": "zeus", "target": "athena", "relation": "parent" }
   ]
