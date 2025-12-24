@@ -197,7 +197,7 @@ function renderGraph(g) {
     
     const radiusScale = d3.scaleSqrt()
       .domain(degExtent)
-      .range([14, 38]); // <-- tweak these to make portraits bigger overall
+      .range([10, 56]); // <-- tweak these to make portraits bigger overall
 
     function nodeRadius(d) {
       const deg = degree?.get(d.id) || 0;
