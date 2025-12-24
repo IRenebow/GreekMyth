@@ -64,6 +64,7 @@
     { "id": "clymene", "label": "Clymene", "type": "titan", "generation": 4 },
       
     { "id": "atlas", "label": "Atlas", "type": "titan", "generation": 5 },
+    { "id": "prometheus", "label": "Prometheus", "type": "titan", "generation": 5 },
     { "id": "athena", "label": "Athena", "type": "olympian", "generation": 5,"img": "images/characters/athena.jpeg" }
   ],
   "links": [
@@ -144,6 +145,8 @@
       
     { "source": "lapetus", "target": "atlas", "relation": "parent" },
     { "source": "clymene", "target": "atlas", "relation": "parent" },
+    { "source": "lapetus", "target": "prometheus", "relation": "parent" },
+    { "source": "clymene", "target": "prometheus", "relation": "parent" },
     { "source": "zeus", "target": "cronus", "relation": "killed" },
     { "source": "zeus", "target": "campe", "relation": "killed" },
     { "source": "zeus", "target": "hecatoncheires", "relation": "freed" },

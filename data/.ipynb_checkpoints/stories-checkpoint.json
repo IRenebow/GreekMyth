@@ -1,14 +1,4 @@
 {
-  "the titanomachy": {
-    "title": "The Titanomachy",
-    "summary": "A ten-year war in which Zeus and the Olympians overthrew the Titans.",
-    "characters": ["zeus", "cronus", "rhea", "gaia", "uranus"],
-    "events": [
-      "Zeus frees his siblings from Cronus.",
-      "The Olympians and Titans wage war.",
-      "The Olympians win; Titans are imprisoned."
-    ]
-  },
   "birth of athena": {
     "title": "The Birth of Athena",
     "summary": "Athena is born from Zeus in an extraordinary way.",
@@ -38,7 +28,7 @@
   },
   "Cronus devouring his children": {
     "title": "Cronus Devouring His Children",
-    "summary": "Zeus killed Cronus and took over.",
+    "summary": "Zeus freed his siblings from children-eating Cronus and became the leader of Olympian gods.",
     "characters": ["cronus", "zeus", "cyclopes", "hecatoncheires", "tartarus", "campe", "rhea", "gaia", "uranus","adrasteia","ida","amalthea","metis","hestia","demeter","hera","hades","poseidon"],
     "events": [
       "When Cronus became the next ruler, he imprisoned the Cyclopes and the Hecatoncheires in Tartarus and set the dragoness Campe to guard them. He married his sister, the Titaness Rhea, who bore him five children. However, Gaea and Uranus had both prophesied that Cronus would eventually be overthrown by one of his sons. So much like his father, Cronus maltreated his children, devouring each of them at the time of birth. Rhea was distressed by Cronus’ treatment of her children and, just like Gaea before him, plotted against her husband. On the advice of her mother, when it was time to give birth to her sixth child, Rhea hid herself on Crete, leaving the new-born child to be raised by the nymphs of the island. To conceal her act, she wrapped a stone in swaddling clothes and passed it off as the supposed baby to Cronus, who, unaware of her intentions, swallowed it yet again.",
@@ -47,10 +37,11 @@
   },
   "the titanomachy": {
     "title": "the Titanomachy",
-    "summary": "Zeus defeated Titans and Olympian gods dominated.",
+    "summary": "Zeus formed alliance with the Cyclopes and the Hecatoncheires and defeated the Titans. Olympian gods dominated.",
     "characters": ["zeus", "cronus", "atlas", "gaia","cyclopes", "hecatoncheires"],
     "events": [
-      "Although Cronus released all his children, he was still in command – and yet to be defeated. He was too old to protect himself from the attacks of his progeny, but he enlisted the help of the faithful Titans, who also feared the new generation of gods. This led to a decade-long war between the Titans and the Olympians, remembered by generations hence as the Titanomachy. Atlas became the Titans’ leader and led his armies to many victories. At one point, it even seemed that Zeus would be defeated. However, at the advice of Gaia, he went to Tartarus, killed Campe and released the Cyclopes and the Hecatoncheires. In gratitude, the Cyclopes provided Zeus with his signature thunderbolt; they also made a trident for Poseidon and a helmet of invisibility for Hades. The tables had turned."
+      "Although Cronus released all his children, he was still in command – and yet to be defeated. He was too old to protect himself from the attacks of his progeny, but he enlisted the help of the faithful Titans, who also feared the new generation of gods. This led to a decade-long war between the Titans and the Olympians, remembered by generations hence as the Titanomachy. Atlas became the Titans’ leader and led his armies to many victories. At one point, it even seemed that Zeus would be defeated. However, at the advice of Gaia, he went to Tartarus, killed Campe and released the Cyclopes and the Hecatoncheires. In gratitude, the Cyclopes provided Zeus with his signature thunderbolt; they also made a trident for Poseidon and a helmet of invisibility for Hades. The tables had turned.",
+    "However, as so many times before, the final victory would not be the result of brute force, but it would happen due to a cunning little trick, possibly devised by Prometheus, who deserted from the Titans’ army beforehand. Armed with boulders, Hecatoncheires set an ambush for the Titans. At the right time, Zeus retreated his forces, drawing the Titans into the Hecatoncheires’ trap. The Hundred-Handed ones started raining down hundreds of boulders, with such a fury that the Titans thought the mountains were falling down upon them. They ran away, and Zeus could finally consider himself the King of the Universe."
     ]
   }
 }
