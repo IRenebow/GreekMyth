@@ -51,7 +51,7 @@ const NORMALIZE_CHILD_TO_PARENT = true;
 // Which relations get arrows (directional)
 const DIRECTED = new Set([
   "parent", "created", "fashioned",
-  "killed", "punished", "cursed", "blessed", "rape"
+  "killed", "punished", "cursed", "blessed", "rape",
   "mentor", "patron", "overthrew", "freed", "raised", "imprisoned"
 ]);
 
