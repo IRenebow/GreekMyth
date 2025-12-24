@@ -52,7 +52,7 @@ const NORMALIZE_CHILD_TO_PARENT = true;
 const DIRECTED = new Set([
   "parent", "created", "fashioned",
   "killed", "punished", "cursed", "blessed",
-  "mentor", "patron", "overthrew"
+  "mentor", "patron", "overthrew", "freed", "raised"
 ]);
 
 function styleForRelation(rel) {
