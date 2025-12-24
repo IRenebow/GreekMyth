@@ -19,11 +19,11 @@
   "castration of Uranus": {
     "title": "Castration of Uranus",
     "summary": "Cronus castrated Uranus and took over.",
-    "characters": ["uranus", "gaia", "cyclopes", "hecatoncheires", "cronus", "giants", "meliae", "erinyes", "aphrodite"],
+    "characters": ["uranus", "gaia", "cyclopes", "hecatoncheires", "cronus", "gigantes", "meliae", "erinyes", "aphrodite"],
     "events": [
       "Gaia gave birth to Uranus, the Starry Sky. Uranus became Gaia's husband, surrounding her from all sides. Together, they produced three sets of children: the three one-eyed Cyclopes, the three Hundred-Handed Hecatoncheires, and the twelve Titans.",
         "However, Uranus was a cruel husband and an even crueler father. He hated his children and didn’t want to allow them to see the light of day. So, he imprisoned them into the hidden places of the earth, Gaia's womb. This angered Gaia, and she plotted with her sons against Uranus. She made a harpe, a great adamant sickle, and tried to incite her children to attack Uranus. All were too afraid, except the youngest Titan, Cronus.",
-    "Gaia and Cronus set up an ambush for Uranus. As he was preparing to lay with Gaia, Cronus castrated him with the sickle, throwing his severed genitals into the ocean. It is unclear as to what happened to Uranus afterward; he either died, withdrew from the earth, or exiled himself to Italy. From the blood that was spilled on the earth due to his castration, emerged the Giants, the Meliae (the Ash Tree Nymphs), and the Erinyes (the Furies). From the sea foam that was produced when his genitals fell into the ocean, arose Aphrodite, the Goddess of Beauty."
+    "Gaia and Cronus set up an ambush for Uranus. As he was preparing to lay with Gaia, Cronus castrated him with the sickle, throwing his severed genitals into the ocean. It is unclear as to what happened to Uranus afterward; he either died, withdrew from the earth, or exiled himself to Italy. From the blood that was spilled on the earth due to his castration, emerged the Gigantes, the Meliae (the Ash Tree Nymphs), and the Erinyes (the Furies). From the sea foam that was produced when his genitals fell into the ocean, arose Aphrodite, the Goddess of Beauty."
     ]
   },
   "Cronus devouring his children": {
@@ -42,15 +42,16 @@
     "events": [
       "Although Cronus released all his children, he was still in command – and yet to be defeated. He was too old to protect himself from the attacks of his progeny, but he enlisted the help of the faithful Titans, who also feared the new generation of gods. This led to a decade-long war between the Titans and the Olympians, remembered by generations hence as the Titanomachy. Atlas became the Titans’ leader and led his armies to many victories. At one point, it even seemed that Zeus would be defeated. However, at the advice of Gaia, he went to Tartarus, killed Campe and released the Cyclopes and the Hecatoncheires. In gratitude, the Cyclopes provided Zeus with his signature thunderbolt; they also made a trident for Poseidon and a helmet of invisibility for Hades. The tables had turned.",
     "However, as so many times before, the final victory would not be the result of brute force, but it would happen due to a cunning little trick, possibly devised by Prometheus, who deserted from the Titans’ army beforehand. Armed with boulders, Hecatoncheires set an ambush for the Titans. At the right time, Zeus retreated his forces, drawing the Titans into the Hecatoncheires’ trap. The Hundred-Handed ones started raining down hundreds of boulders, with such a fury that the Titans thought the mountains were falling down upon them. They ran away, and Zeus could finally consider himself the King of the Universe.",
-    "Zeus exiled the Titans who had fought against him into Tartarus. He made an exception with Atlas, though: being the leader of the opposing force, he was punished to hold the universe on his shoulders."
+    "Zeus exiled the Titans who had fought against him into Tartarus. They were guarded by the Hecatonchires. He made 3 exceptions: 1) Atlas, being the leader of the opposing force, was punished to hold the universe on his shoulders; 2) Themis, the titaness representing undisputed order, remained neutral during the war and later became Zeus' second wife; 3) Prometheus, who sided with the Olympians."
     ]
   },
-  "Zeus defeating Typhon": {
-    "title": "Zeus defeating Typhon",
-    "summary": "Gaia created monster Typhon to revenge the imprisonment of her children. Zeus defeated Typhon",
-    "characters": ["zeus", "typhon", "gaia"],
+  "Zeus against Gaia's kids": {
+    "title": "Zeus Against Gaia's Kids",
+    "summary": "Gaia summoned the Gigantes and created monster Typhon to revenge the imprisonment of her children. Zeus defeated both.",
+    "characters": ["zeus", "typhoneus", "gaia", "gigantes", "hermes"],
     "events": [
-      "Just after the Titanomachy, his grandmother Gaea, outraged by the imprisonment of her children, issued forth one last child of hers, the monstrous Typhon. He was so fearsome that most of the gods fled the second they saw him; however, Zeus didn’t hesitate. He faced the monster and using the power of his lightning bolts, he was able to defeat it. Typhon was subsequently buried under Mount Etna in Sicily.",
+      "Just after the Titanomachy, his grandmother Gaea, outraged by the imprisonment of her children, summoned her children, the Gigantes, to avenge her. Another war followed – the Gigantomachy – but the Olympians prevailed once again.",
+      "This enraged Gaia even more, so she gave birth to Typhoeus, a giant fire-blowing serpentine monster. in their first battle, Typhoeus managed to repel almost all of the Olympian gods and tear out Zeus' tendons. Hermes managed to get the tendons back and give them to Zeus, who eventually threw his lightning bolts against Typhon and overwhelmed him. He finally trapped him underneath Mount Etna. Typhon was subsequently buried under Mount Etna in Sicily.",
     "They say that you can still hear him growling under the volcano. And that someday in the distant future, he will return to challenge Zeus once again."
     ]
   }

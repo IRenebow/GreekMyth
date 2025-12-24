@@ -51,7 +51,7 @@ const NORMALIZE_CHILD_TO_PARENT = true;
 // Which relations get arrows (directional)
 const DIRECTED = new Set([
   "parent", "created", "fashioned",
-  "killed", "punished", "cursed", "blessed",
+  "killed", "punished", "cursed", "blessed", "rape"
   "mentor", "patron", "overthrew", "freed", "raised", "imprisoned"
 ]);
 
@@ -206,6 +206,7 @@ function renderGraph(g) {
       const typeBoost =
         d.type === "primordial" ? 1 :
         d.type === "titan" ? 1 : 
+        d.type === "demigod" ? 1 :
         d.type === "olympian" ? 1 :0;
     
       return radiusScale(deg + typeBoost);

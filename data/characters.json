@@ -3,11 +3,11 @@
     "name": "Zeus",
     "roman_name": "Jupiter",
     "title": "King of the Olympians",
-    "domains": ["Sky", "Thunder", "Law"],
+    "domains": ["Sky", "Weather", "Authority"],
     "parents": ["cronus", "rhea"],
-    "symbols": ["Thunderbolt", "Eagle"],
+    "symbols": ["Thunderbolt", "Scepter", "Eagle (Aetos Dios)", "Aegis (which he lends to Athena)"],
     "img": "images/characters/zeus.jpg",
-    "stories": ["Cronus devouring his children", "the titanomachy", "birth of Athena", "Zeus defeating Typhon"]
+    "stories": ["Cronus devouring his children", "the titanomachy", "birth of Athena", "Zeus against Gaia's kids"]
   },
   "athena": {
     "name": "Athena",
